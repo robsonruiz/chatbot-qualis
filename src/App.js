@@ -70,7 +70,7 @@ const steps = [
   {
     id: 'outrasInformacoes',
     component: (
-      <div className="Div">Você pode consultar outras informações diretamente no nosso site, basta clicar <a href="https://www.portalqualis.com.br/" className="DivLink">aqui!</a></div>
+      <div className="Div">Você pode consultar outras informações diretamente no nosso site, basta clicar <a href="https://www.portalqualis.com.br/" className="DivLink">aqui</a>!</div>
     ),
     trigger: 'ajuda',
   },
