@@ -102,7 +102,9 @@ const steps = [
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <ChatBot steps={steps} />
+    <div className="Chatbot">
+      <ChatBot steps={steps} />
+    </div>
   </ThemeProvider>
 );
 
