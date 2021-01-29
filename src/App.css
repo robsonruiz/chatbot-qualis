@@ -4,15 +4,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 15px;
 }
 
 .Div{
-  font-size: calc(5px + 1vmin);
+  font-size: 15px;
   text-align: center;
 }
 
 .DivLink{
-  font-size: calc(5px + 1vmin);
+  font-size: 15px;
   color: #00b0b0;
 }

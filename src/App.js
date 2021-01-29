@@ -29,17 +29,45 @@ const steps = [
     id: 'menuPrincipal',
     options: [
       { value: 1, label: 'Informações sobre a COVID-19', trigger: 'covid19'},
-      { value: 2, label: 'Informações sobre infectologia', trigger: 'infectologia'},
-      { value: 3, label: 'Informações sobre a Qualis', trigger: 'qualis'},
+      { value: 2, label: 'Informações sobre a Qualis', trigger: 'qualis'},
     ],
   },
   {
     id: 'covid19',
-    message: 'a',
+    options: [
+      { value: 1, label: 'Quais são os sintomas mais comuns?', trigger: 'sintomas'},
+      { value: 2, label: 'Quem tem sintomas deve ficar isolado por quanto tempo?', trigger: 'isolamento'},
+      { value: 3, label: 'Quero saber notícias sobre a COVID-19', trigger: 'noticias'},
+      { value: 4, label: 'Preciso conversar com um especialista', trigger: 'especialista'},
+    ],
   },
   {
-    id: 'infectologia',
-    message: 'a',
+    id: 'sintomas',
+    component: (
+      <div className="Div">Os sintomas mais comuns de COVID-19 são os seguintes: febre, tosse seca e cansaço.</div>
+    ),
+    trigger: 'ajuda',
+  },
+  {
+    id: 'isolamento',
+    component: (
+      <div className="Div">Quem tem sintomas deve ficar em isolamento por pelo menos 14 dias.</div>
+    ),
+    trigger: 'ajuda',
+  },
+  {
+    id: 'noticias',
+    component: (
+      <div className="Div">Notícias sobre a COVID-19 podem ser encontradas no nosso site, basta clicar <a href="https://www.portalqualis.com.br/covid-19/" className="DivLink">aqui</a> para acessar.</div>
+    ),
+    trigger: 'ajuda',
+  },
+  {
+    id: 'especialista',
+    component: (
+      <div className="Div">Para conversar com um de nossos especialistas, clique <a href="" className="DivLink">aqui</a>.</div>
+    ),
+    trigger: 'ajuda',
   },
   {
     id: 'qualis',
@@ -57,7 +85,10 @@ const steps = [
   },
   {
     id: 'contato',
-    message: 'a',
+    component: (
+      <div className="Div">Você pode entrar em contato conosco pelo número (51) 3028-4992, pelo <a href="https://api.whatsapp.com/send/?phone=+555197748691&text&app_absent=0" className="DivLink">WhatsApp</a> ou pelo nosso <a href="https://www.portalqualis.com.br/contato/" className="DivLink">site</a>.</div>
+    ),
+    trigger: 'ajuda',
   },
   {
     id: 'servicos',
