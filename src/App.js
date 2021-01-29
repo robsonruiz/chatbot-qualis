@@ -93,11 +93,17 @@ const steps = [
   },
   {
     id: 'servicos',
-    message: 'a',
+    component: (
+      <div className="Div">Os serviços ofertados pela Qualis são os seguintes: consultoria para ambientes seguros, teleinfectologia e televigilância das infecções hospitalares. Para saber mais sobre esses serviços, clique <a href="https://www.portalqualis.com.br/servicos/" className="DivLink">aqui</a>.</div>
+    ),
+    trigger: 'ajuda',
   },
   {
     id: 'produtos',
-    message: 'a',
+    component: (
+      <div className="Div">Os produtos da Qualis são os seguintes: Vigilância Móvel (Mobilidade nos Pacotes de Prevenção de Infecção Hospitalar) e Robô ISA (Robô de Busca Ativa de Infecções Hospitalares). Para saber mais sobre esses produtos, clique <a href="https://www.portalqualis.com.br/produtos/" className="DivLink">aqui</a>.</div>
+    ),
+    trigger: 'ajuda',
   },
   {
     id: 'outrasInformacoes',
