@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import ChatBot from 'react-simple-chatbot';
+import Logo from './logo.jpg';
 import './App.css';
 
 const theme = {
@@ -22,7 +23,7 @@ const steps = [
   },
   {
     id: 'apresentacao',
-    message: 'Eu sou o chatbot da Qualis - Tecnologia em Infectologia! No que posso lhe ajudar?',
+    message: 'Eu sou o chatbot da Qualis! No que posso lhe ajudar?',
     trigger: 'menuPrincipal',
   },
   {
@@ -134,7 +135,8 @@ const steps = [
 const App = () => (
   <ThemeProvider theme={theme}>
     <div className="Chatbot">
-      <ChatBot steps={steps} />
+      <img src={Logo} className="Logo"/>
+      <ChatBot steps={steps}/>
     </div>
   </ThemeProvider>
 );
