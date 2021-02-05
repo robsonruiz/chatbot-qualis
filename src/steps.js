@@ -254,7 +254,49 @@ const Steps = [
     },
     {
       id: 'menuHigieneDasMaos',
-    }
+      options: [
+        { value: 1, label: 'Com que produtos devo higienizar as mãos?', trigger: 'produtosHigienizacaoMaos'},
+        { value: 2, label: 'Água e sabonete são mais eficazes que o álcool gel?', trigger: 'aguaSabonete'},
+        { value: 3, label: 'Qual a técnica correta da higiene de mãos com preparações alcoólicas (gel ou solução)?', trigger: 'higieneAlcool'},
+        { value: 4, label: 'Qual a técnica correta da higiene de mãos com água e sabonete?', trigger: 'higieneAguaSabonete'},
+        { value: 5, label: 'Quais são os momentos que devo higienizar as mãos?', trigger: 'momentosHigiene'},
+      ],
+    },
+    {
+      id: 'produtosHigienizacaoMaos',
+      component: (
+        <div className="Div"></div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'aguaSabonete',
+      component: (
+        <div className="Div"></div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'higieneAlcool',
+      component: (
+        <div className="Div"></div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'higieneAguaSabonete',
+      component: (
+        <div className="Div"></div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'momentosHigiene',
+      component: (
+        <div className="Div"></div>
+      ),
+      trigger: 'ajuda',
+    },
     {
       id: 'geralCovid19',
       options: [
