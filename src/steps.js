@@ -248,6 +248,14 @@ const Steps = [
       trigger: 'ajuda',
     },
     {
+      id: 'higieneDasMaos',
+      message: 'Selecione o que você deseja saber sobre higiene das mãos.',
+      trigger: 'menuHigieneDasMaos',
+    },
+    {
+      id: 'menuHigieneDasMaos',
+    }
+    {
       id: 'geralCovid19',
       options: [
         { value: 1, label: 'O que são as novas variantes/mutações do SARS-CoV-2?', trigger: 'variantes'},
