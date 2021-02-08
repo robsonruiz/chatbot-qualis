@@ -14,6 +14,7 @@ const Steps = [
       options: [
         { value: 1, label: 'Informações sobre a COVID-19', trigger: 'preMenuCovid19'},
         { value: 2, label: 'Informações sobre a Qualis', trigger: 'qualis'},
+        { value: 3, label: 'Preciso conversar com um especialista', trigger: 'especialista'},
       ],
     },
     {
@@ -29,7 +30,7 @@ const Steps = [
         { value: 3, label: 'Higiene das mãos', trigger: 'higieneDasMaos'},
         { value: 4, label: 'Limpeza do ambiente', trigger: 'limpezaDoAmbiente'},
         { value: 5, label: 'Sintomas', trigger: 'sintomas'},
-        { value: 6, label: 'Contato', trigger: 'contatoDuranteAPandemia'},
+        { value: 6, label: 'Contato durante a pandemia', trigger: 'contatoDuranteAPandemia'},
         { value: 7, label: 'Teste de COVID-19', trigger: 'teste'},
         { value: 8, label: 'Tempo de isolamento', trigger: 'tempoDeIsolamento'},
         { value: 9, label: 'Viagens durante a pandemia', trigger: 'viagens'},
@@ -618,7 +619,6 @@ const Steps = [
         { value: 1, label: 'O que são as novas variantes/mutações do SARS-CoV-2?', trigger: 'variantes'},
         { value: 2, label: 'Qual a distância de uma pessoa para estar protegido?', trigger: 'distanciamento'},
         { value: 3, label: 'Quero saber notícias sobre a COVID-19', trigger: 'noticias'},
-        { value: 4, label: 'Preciso conversar com um especialista', trigger: 'especialista'},
       ],
     },
     {
@@ -639,13 +639,6 @@ const Steps = [
       id: 'noticias',
       component: (
         <div className="Div">Notícias sobre a COVID-19 podem ser encontradas no nosso site, basta clicar <a href="https://www.portalqualis.com.br/covid-19/" className="DivLink">aqui</a> para acessar.</div>
-      ),
-      trigger: 'ajuda',
-    },
-    {
-      id: 'especialista',
-      component: (
-        <div className="Div">Para conversar com um de nossos especialistas, clique <a href="" className="DivLink">aqui</a>.</div>
       ),
       trigger: 'ajuda',
     },
@@ -688,6 +681,13 @@ const Steps = [
       id: 'outrasInformacoes',
       component: (
         <div className="Div">Você pode consultar outras informações diretamente no nosso site, basta clicar <a href="https://www.portalqualis.com.br/" className="DivLink">aqui</a>!</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'especialista',
+      component: (
+        <div className="Div">Se não consegui responder sua dúvida, você pode conversar com um de nossos especialistas clicando <a href="" className="DivLink">aqui</a>.</div>
       ),
       trigger: 'ajuda',
     },
