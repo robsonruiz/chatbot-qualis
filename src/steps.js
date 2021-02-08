@@ -546,6 +546,32 @@ const Steps = [
       trigger: 'ajuda',
     },
     {
+      id: 'viagens',
+      message: 'Selecione o que você deseja saber sobre viagens durante a pandemia.',
+      trigger: 'menuViagens',
+    },
+    {
+      id: 'menuViagens',
+      options: [
+        { value: 1, label: 'Posso viajar durante a pandemia?', trigger: 'podeViajar'},
+        { value: 2, label: 'Vou viajar, quais cuidados devo ter?', trigger: 'cuidadosViagem'},
+      ],
+    },
+    {
+      id: 'podeViajar',
+      component: (
+        <div className="Div">Sim, embora não seja recomendado viajar durante a pandemia, a não ser que sejam situações necessárias. Com relação às viagens aéreas, deve-se seguir orientações básicas de precaução como manter um distanciamento mínimo de 1,5m no embarque e desembarque, utilizar máscara de tecido ou cirúrgica durante toda a viagem, cobrindo adequadamente a boca e o nariz, evitar a circulação dentro da aeronave, higienizar as mãos sempre que possível.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'cuidadosViagem',
+      component: (
+        <div className="Div">Se teve contato com alguém suspeito ou confirmado, adie a viagem até ter passado seu período de quarentena. Não viaje se você teve um teste positivo para a COVID-19 nos últimos 10 dias,  mesmo que seja assintomático. Avalie a situação da pandemia no seu destino. Evite viajar se o sistema de saúde estiver lotado. Utilize máscara em todos os locais e leve máscaras extras. Evite aglomerações. Mantenha o distanciamento. Higienize as mãos frequentemente.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
       id: 'geralCovid19',
       options: [
         { value: 1, label: 'O que são as novas variantes/mutações do SARS-CoV-2?', trigger: 'variantes'},
