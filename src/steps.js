@@ -73,7 +73,7 @@ const Steps = [
     {
       id: 'seguranca',
       component: (
-        <div className="Div">Nenhuma vacina é 100% segura. Eventos raros vão ocorrer à medida que centenas de milhares de pessoas são vacinadas. Os eventos adversos mais comuns são dor no local da injeção, cansaço, mal estar, dores musculares dentro de alguns dias após a vacinação. Estes eventos podem ser controlados com uso de analgésicos como paracetamol. Geralmente os sintomas são mais comuns nos jovens.</div>
+        <div className="Div">Nenhuma vacina é 100% segura. Eventos raros vão ocorrer à medida que centenas de milhares de pessoas são vacinadas. Os eventos adversos mais comuns são dor no local da injeção, cansaço, mal estar, dores musculares dentro de alguns dias após a vacinação. Estes eventos podem ser controlados com uso de analgésicos como paracetamol.</div>
       ),
       trigger: 'ajuda',
     },
@@ -129,7 +129,7 @@ const Steps = [
     {
       id: 'gruposEspeciaisCriancas',
       component: (
-        <div className="Div">Conforme definição do plano nacional de vacinação, grupos como gestantes, puérperas e lactantes, pacientes portadores de doenças reumáticas, oncológicos, transplantados e demais imunossuprimidos, não foram avaliados nos estudos quanto a segurança e eficácia da vacina, devendo a mesma ser realizada após avaliação cautelosa dos riscos e benefícios e com decisão compartilhada entre o indivíduo e seu médico prescritor. O plano também não engloba as crianças devido a falta de estudos e evidências que demonstrem a segurança neste grupo de pessoas.</div>
+        <div className="Div">Conforme definição do plano nacional de vacinação, grupos como gestantes, puérperas e lactantes, pacientes portadores de doenças reumáticas, oncológicos, transplantados e demais imunossuprimidos, não foram avaliados nos estudos quanto a segurança e eficácia da vacina, devendo a mesma ser realizada após avaliação cautelosa dos riscos e benefícios e com decisão compartilhada entre o indivíduo e seu médico assistente. O plano também não engloba as crianças devido a falta de estudos e evidências que demonstrem a segurança neste grupo de pessoas.</div>
       ),
       trigger: 'ajuda',
     },
@@ -265,35 +265,167 @@ const Steps = [
     {
       id: 'produtosHigienizacaoMaos',
       component: (
-        <div className="Div"></div>
+        <div className="Div">A higienização das mãos pode ser realizada utilizando água e sabonete ou álcool gel. A escolha de um produto ou outro dependerá da situação e disponibilidade. A água e sabonete são sempre recomendados quando as mãos estiverem visivelmente sujas. Já o álcool gel poderá ser utilizado em todas as outras situações, já que é mais fácil de estar prontamente disponível em qualquer lugar.</div>
       ),
       trigger: 'ajuda',
     },
     {
       id: 'aguaSabonete',
       component: (
-        <div className="Div"></div>
+        <div className="Div">A higienização das mãos com preparações alcoólicas e com água e sabão são eficazes, entretanto alguns estudos mostram que o álcool gel pode ser mais efetivo que a higienização com água e sabonete, por ter uma ação bactericida e virucida que o sabonete comum não tem.</div>
       ),
       trigger: 'ajuda',
     },
     {
       id: 'higieneAlcool',
       component: (
-        <div className="Div"></div>
+        <div className="Div">A​plique uma quantidade suficiente de preparação alcoólica em uma das mãos. Friccione as palmas, o dorso, entre os dedos, polpas digitais, polegares, unhas e punhos. Quando estiverem secas, suas mãos estarão seguras.</div>
       ),
       trigger: 'ajuda',
     },
     {
       id: 'higieneAguaSabonete',
       component: (
-        <div className="Div"></div>
+        <div className="Div">Abrir a torneira e molhar as mãos. Aplicar na palma da mão quantidade suficiente de sabonete líquido. Friccione ou ensaboe as palmas, o dorso, entre os dedos, polpas digitais, polegares, unhas e punhos. Enxaguar as mãos, retirando os resíduos dos dedos para os punhos. Evitar contato direto das mãos ensaboadas com a torneira. Enxugar as mãos com papel toalha. Fechar a torneira com papel toalha. Nunca use as mãos para fechar as torneiras.</div>
       ),
       trigger: 'ajuda',
     },
     {
       id: 'momentosHigiene',
       component: (
-        <div className="Div"></div>
+        <div className="Div">Quando estiverem visivelmente sujas. Após usar transporte público. Após ir ao banheiro. Após tossir ou espirrar. Antes de preparar refeições. Antes de se alimentar. Antes e após cuidar de alguém doente. Ao chegar em casa. Ao chegar em algum lugar público, como restaurante, farmácia ou supermercado. Ao sair de algum lugar público. Antes de tocar olhos, nariz ou boca. Na prática deve ser realizada sempre que se considerar que as mãos possam estar contaminadas.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'limpezaDoAmbiente',
+      message: 'Selecione o que você deseja saber sobre limpeza do ambiente.',
+      trigger: 'menuLimpezaDoAmbiente',
+    },
+    {
+      id: 'menuLimpezaDoAmbiente',
+      options: [
+        { value: 1, label: 'Qual o impacto do ambiente na transmissão do SARS-CoV-2?', trigger: 'impactoAmbienteTransmissao'},
+        { value: 2, label: 'As roupas transmitem o vírus?', trigger: 'roupasTransmitem'},
+        { value: 3, label: 'Devo higienizar as compras do supermercado?', trigger: 'higienizarComprasMercado'},
+        { value: 4, label: 'O uso de tapetes sanitizantes são efetivos na contenção da transmissão?', trigger: 'tapetesSanitizantes'},
+        { value: 5, label: 'Quais são os locais de maior risco de adquirir a infecção?', trigger: 'locaisMaiorRisco'},
+      ],
+    },
+    {
+      id: 'impactoAmbienteTransmissao',
+      component: (
+        <div className="Div">Até o momento sabe-se que o SARS-CoV-2 pode permanecer viável em diversas superfícies por períodos de tempo variáveis. Entretanto, esta não é a principal via de transmissão da COVID-19, sendo a principal a transmissão através das gotículas respiratórias. Isto não elimina a necessidade de cuidados e limpeza do ambiente, já que a transmissão indireta pode ocorrer, porém é menos provável.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'roupasTransmitem',
+      component: (
+        <div className="Div">Não, uma vez que as roupas não entram em contato direto com as nossas mucosas (boca, nariz e olhos). Estudos demonstraram que  as roupas de profissionais de saúde que cuidavam de pacientes com COVID-19 em hospitais, não ofereciam riscos na transmissão por não conter partículas virais.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'higienizarComprasMercado',
+      component: (
+        <div className="Div">Não há comprovação de transmissão da infecção por alimentos. O ambiente também tem menor importância na transmissão. Ainda,  produtos utilizados no ambiente doméstico podem não ser adequados para a desinfecção de embalagens. Reforça-se a necessidade de higienizar as mãos sempre após tocas embalagens e antes de preparar os alimentos e manter as superfícies domésticas limpas.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'tapetesSanitizantes',
+      component: (
+        <div className="Div">Não. Não há comprovação científica de que os tapetes sanitizantes sejam efetivos na redução da transmissão da COVID-19. Além disso, os sapatos não estão associados à transmissão da COVID-19. Após tocar sapatos, ou pegar qualquer objeto que tenha caído, devemos higienizar as nossas mãos.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'locaisMaiorRisco',
+      component: (
+        <div className="Div">Locais com maior número de pessoas em que o distanciamento não possa ser mantido. Locais onde haja uma menor renovação de ar. Ambientes fechados, como restaurantes onde haja a necessidade de retirada das máscaras. Além das instituições de saúde ou instituições de longa permanência.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'sintomas',
+      message: 'Selecione o que você deseja saber sobre os sintomas da COVID-19.',
+      trigger: 'menuSintomas',
+    },
+    {
+      id: 'menuSintomas',
+      options: [
+        { value: 1, label: 'Quais os sintomas da COVID-19?', trigger: 'sintomasCovid'},
+        { value: 2, label: 'Estou com sintomas da COVID-19, devo procurar atendimento médico?', trigger: 'pessoaComSintomas'},
+        { value: 3, label: 'Onde devo procurar atendimento médico?', trigger: 'ondeProcurarAtendimento'},
+        { value: 4, label: 'Estou com sintomas da COVID-19, devo me afastar das minhas atividades?', trigger: 'afastamentoPorSintomas'},
+        { value: 5, label: 'Quanto tempo é necessário para o desenvolvimento dos sintomas?', trigger: 'tempoDesenvolvimentoSintomas'},
+        { value: 6, label: 'O que considero contato de um caso positivo?', trigger: 'consideraContatoPositivo'},
+        { value: 7, label: 'Sou contato de um caso positivo?', trigger: 'casoPositivo'},
+        { value: 8, label: 'Meu filho (a) está com COVID-19, posso ir trabalhar?', trigger: 'filhoComCovid'},
+        { value: 9, label: 'Meu companheiro (a) está com sintomas, posso ir trabalhar?', trigger: 'companheiroComSintomas'},
+      ],
+    },
+    {
+      id: 'sintomasCovid',
+      component: (
+        <div className="Div">Qualquer pessoa pode ter sintomas leves ou graves. As manifestações mais comuns são tosse, dor de garganta, dores do corpo, dor de cabeça, cansaço, congestão nasal, náusea ou vômitos, diarréia, febre e falta de ar. A perda do olfato e do paladar estão mais associados com a COVID-19 do que com outros vírus. De 17-20% das pessoas podem permanecer assintomáticas.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'pessoaComSintomas',
+      component: (
+        <div className="Div">Sempre que você estiver com muitos sintomas, seria ideal buscar auxílio médico. Os sintomas que significam maior gravidade são, dificuldade para respirar, fala entrecortada, cansaço aos esforços mínimos, dor no peito persistente, dificuldade de permanecer acordado, palidez, ou confusão mental.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'ondeProcurarAtendimento',
+      component: (
+        <div className="Div">Contate seu médico de confiança; ou busque os locais de atendimento de seu convênio; ou busque o posto de saúde de sua região. Os postos de saúde estão equipados com insumos para o diagnóstico adequado da COVID-19.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'afastamentoPorSintomas',
+      component: (
+        <div className="Div">Sim, é importante permanecer em isolamento domiciliar até a definição se você está infectado. Caso confirme o diagnóstico você deve permanecer em isolamento por aproximadamente 10 dias do começo dos sintomas se estiver com melhora clínica.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'tempoDesenvolvimentoSintomas',
+      component: (
+        <div className="Div">Em média, os sintomas se desenvolvem entre o segundo e o sétimo dia do contato. Em torno de 95% dos pacientes já desenvolveram sintomas com 12 dias de contato. Catorze dias é o prazo final para desenvolvimento de sintomas a partir do dia de contato.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'consideraContatoPositivo',
+      component: (
+        <div className="Div">Se você convive na mesma casa de um caso positivo, você é considerado contato. Ou se você estiver próximo de um caso positivo,  a distância de 2 metros ou menos, por pelo menos 15 minutos.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'casoPositivo',
+      component: (
+        <div className="Div">Você deve ficar alerta para a presença de sintomas. Entre dois e sete dias metade das pessoas manifestam sinais e sintomas. Como há a possibilidade de transmissão do vírus na fase pré-sintomática (48h antes do início dos sintomas) é importante ficar alerta a qualquer indício. A testagem de RT-PCR pode ser realizada, preferentemente, no quinto dia do contato se a pessoa estiver assintomática.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'filhoComCovid',
+      component: (
+        <div className="Div">O convívio familiar é a situação de maior risco de transmissão, com taxa de transmissão em torno de 30%. Portanto, se alguém da sua casa estiver doente, você deve ficar em precaução em casa por até 14 dias do início dos sintomas da pessoa doente. Caso você manifeste algum sintoma, realize o teste de RT-PCR.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'companheiroComSintomas',
+      component: (
+        <div className="Div">O convívio familiar é a situação de maior risco de transmissão, com taxa de transmissão em torno de 30%. Portanto, se alguém da sua casa estiver doente, você deve ficar em precaução em casa por até 14 dias do início dos sintomas da pessoa doente. Caso você manifeste algum sintoma, realize o teste de RT-PCR.</div>
       ),
       trigger: 'ajuda',
     },
