@@ -24,15 +24,16 @@ const Steps = [
     {
       id: 'menuCovid19',
       options: [
-        { value: 1, label: 'Sobre a vacina', trigger: 'vacina'},
+        { value: 1, label: 'Vacina', trigger: 'vacina'},
         { value: 2, label: 'Medidas preventivas', trigger: 'medidasPreventivas'},
         { value: 3, label: 'Higiene das mãos', trigger: 'higieneDasMaos'},
         { value: 4, label: 'Limpeza do ambiente', trigger: 'limpezaDoAmbiente'},
         { value: 5, label: 'Sintomas', trigger: 'sintomas'},
-        { value: 6, label: 'Teste de COVID-19', trigger: 'teste'},
-        { value: 7, label: 'Tempo de isolamento', trigger: 'tempoDeIsolamento'},
-        { value: 8, label: 'Viagens durante a pandemia', trigger: 'viagens'},
-        { value: 9, label: 'Informações gerais', trigger: 'geralCovid19'},
+        { value: 6, label: 'Contato', trigger: 'contatoDuranteAPandemia'},
+        { value: 7, label: 'Teste de COVID-19', trigger: 'teste'},
+        { value: 8, label: 'Tempo de isolamento', trigger: 'tempoDeIsolamento'},
+        { value: 9, label: 'Viagens durante a pandemia', trigger: 'viagens'},
+        { value: 10, label: 'Informações gerais', trigger: 'geralCovid19'},
       ],
     },
     {
@@ -43,24 +44,48 @@ const Steps = [
     {
       id: 'menuVacinas',
       options: [
+        { value: 1, label: 'Segurança e eficácia', trigger: 'menuSegurancaEEficacia'},
+        { value: 2, label: 'Quem pode tomar a vacina?', trigger: 'menuQuemPodeTomarAVacina'},
+        { value: 3, label: 'Doses da vacina', trigger: 'menuDosesDaVacina'},
+        { value: 4, label: 'Dúvidas gerais', trigger: 'menuDuvidasGeraisVacina'},
+      ],
+    },
+    {
+      id: 'menuSegurancaEEficacia',
+      options: [
         { value: 1, label: 'Qual a eficácia da vacina?', trigger: 'eficacia'},
         { value: 2, label: 'A vacina é segura?', trigger: 'seguranca'},
         { value: 3, label: 'Há alguma contra-indicação à vacina?', trigger: 'contraindicacao'},
-        { value: 4, label: 'Pessoas com HIV ou imunossuprimidas podem receber a vacina?', trigger: 'hivImunossuprimidas'},
-        { value: 5, label: 'Mulheres grávidas podem receber a vacina?', trigger: 'gravidas'},
-        { value: 6, label: 'A vacina pode mudar o meu DNA?', trigger: 'alteracaoDoDNA'},
-        { value: 7, label: 'A vacina pode me fazer ter a COVID-19?', trigger: 'infeccaoPelaVacina'},
-        { value: 8, label: 'Quais reações posso ter com a vacina?', trigger: 'reacoes'},
-        { value: 9, label: 'Quem tem indicação de se vacinar?', trigger: 'indicacao'},
-        { value: 10, label: 'Grupos especiais e crianças possuem indicação de se vacinar?', trigger: 'gruposEspeciaisCriancas'},
-        { value: 11, label: 'Qual vacina devo tomar?', trigger: 'qualVacina'},
-        { value: 12, label: 'Quantas doses da vacina preciso tomar?', trigger: 'doses'},
-        { value: 13, label: 'Qual o intervalo entre as doses da vacina?', trigger: 'intervaloDoses'},
-        { value: 14, label: 'Quanto tempo dura a proteção da vacina?', trigger: 'tempoProtecao'},
-        { value: 15, label: 'Eu preciso fazer algum teste para comprovar que a vacina atingiu a sua eficácia?', trigger: 'comprovaEficiencia'},
-        { value: 16, label: 'Pessoas que tiveram COVID-19 podem receber a vacina?', trigger: 'infectadosRecebemVacina'},
-        { value: 17, label: 'A vacina altera os testes diagnósticos da COVID-19?', trigger: 'alteraTestes'},
-        { value: 18, label: 'Se receber a vacina vou posso abandonar o uso de máscara?', trigger: 'usoDaMascaraPosVacina'},
+        { value: 4, label: 'A vacina pode mudar o meu DNA?', trigger: 'alteracaoDoDNA'},
+        { value: 5, label: 'A vacina pode me fazer ter a COVID-19?', trigger: 'infeccaoPelaVacina'},
+        { value: 6, label: 'Quais reações posso ter com a vacina?', trigger: 'reacoes'},
+        { value: 7, label: 'Eu preciso fazer algum teste para comprovar que a vacina atingiu a sua eficácia?', trigger: 'comprovaEficiencia'},
+      ],
+    },
+    {
+      id: 'menuQuemPodeTomarAVacina',
+      options: [
+        { value: 1, label: 'Quem tem indicação de se vacinar?', trigger: 'indicacao'},
+        { value: 2, label: 'Pessoas com HIV ou imunossuprimidas podem receber a vacina?', trigger: 'hivImunossuprimidas'},
+        { value: 3, label: 'A vacina pode mudar o meu DNA?', trigger: 'alteracaoDoDNA'},
+        { value: 4, label: 'Grupos especiais e crianças possuem indicação de se vacinar?', trigger: 'gruposEspeciaisCriancas'},
+        { value: 5, label: 'Pessoas que tiveram COVID-19 podem receber a vacina?', trigger: 'infectadosRecebemVacina'},
+      ],
+    },
+    {
+      id: 'menuDosesDaVacina',
+      options: [
+        { value: 1, label: 'Quantas doses da vacina preciso tomar?', trigger: 'doses'},
+        { value: 2, label: 'Qual o intervalo entre as doses da vacina?', trigger: 'intervaloDoses'},
+      ],
+    },
+    {
+      id: 'menuDuvidasGeraisVacina',
+      options: [
+        { value: 1, label: 'Qual vacina devo tomar?', trigger: 'qualVacina'},
+        { value: 2, label: 'Quanto tempo dura a proteção da vacina?', trigger: 'tempoProtecao'},
+        { value: 3, label: 'Se receber a vacina vou posso abandonar o uso de máscara?', trigger: 'usoDaMascaraPosVacina'},
+        { value: 4, label: 'A vacina altera os testes diagnósticos da COVID-19?', trigger: 'alteraTestes'},
       ],
     },
     {
@@ -360,10 +385,6 @@ const Steps = [
         { value: 3, label: 'Onde devo procurar atendimento médico?', trigger: 'ondeProcurarAtendimento'},
         { value: 4, label: 'Estou com sintomas da COVID-19, devo me afastar das minhas atividades?', trigger: 'afastamentoPorSintomas'},
         { value: 5, label: 'Quanto tempo é necessário para o desenvolvimento dos sintomas?', trigger: 'tempoDesenvolvimentoSintomas'},
-        { value: 6, label: 'O que considero contato de um caso positivo?', trigger: 'consideraContatoPositivo'},
-        { value: 7, label: 'Sou contato de um caso positivo?', trigger: 'casoPositivo'},
-        { value: 8, label: 'Meu filho (a) está com COVID-19, posso ir trabalhar?', trigger: 'filhoComCovid'},
-        { value: 9, label: 'Meu companheiro (a) está com sintomas, posso ir trabalhar?', trigger: 'companheiroComSintomas'},
       ],
     },
     {
@@ -400,6 +421,20 @@ const Steps = [
         <div className="Div">Em média, os sintomas se desenvolvem entre o segundo e o sétimo dia do contato. Em torno de 95% dos pacientes já desenvolveram sintomas com 12 dias de contato. Catorze dias é o prazo final para desenvolvimento de sintomas a partir do dia de contato.</div>
       ),
       trigger: 'ajuda',
+    },
+    {
+      id: 'contatoDuranteAPandemia',
+      message: 'Selecione o que você deseja saber sobre contatos durante a pandemia.',
+      trigger: 'menuContato',
+    },
+    {
+      id: 'menuContato',
+      options: [
+        { value: 1, label: 'O que considero contato de um caso positivo?', trigger: 'consideraContatoPositivo'},
+        { value: 2, label: 'Sou contato de um caso positivo?', trigger: 'casoPositivo'},
+        { value: 3, label: 'Meu filho (a) está com COVID-19, posso ir trabalhar?', trigger: 'filhoComCovid'},
+        { value: 4, label: 'Meu companheiro (a) está com sintomas, posso ir trabalhar?', trigger: 'companheiroComSintomas'},
+      ],
     },
     {
       id: 'consideraContatoPositivo',
@@ -442,9 +477,7 @@ const Steps = [
         { value: 3, label: 'Quais são as indicações dos testes para a detecção da COVID-19?', trigger: 'indicacoesDosTestes'},
         { value: 4, label: 'Qual a diferença dos testes de antígeno e de RT-PCR?', trigger: 'diferencaDosTestes'},
         { value: 5, label: 'Posso confiar no teste de COVID-19 disponível nas farmácias?', trigger: 'confiancaTestes'},
-        { value: 6, label: 'Quando devo realizar o teste na presença de sintomas?', trigger: 'testeComSintomas'},
-        { value: 7, label: 'Estou assintomático devo realizar o teste?', trigger: 'assintomaticoTeste'},
-        { value: 8, label: 'Não tenho doença, mas quero visitar meus pais, posso fazer o teste?', trigger: 'visitaPaisTeste'},
+        { value: 6, label: 'Não sei se preciso realizar o teste', trigger: 'menuQuandoTestar'},
       ],
     },
     {
@@ -481,6 +514,14 @@ const Steps = [
         <div className="Div">Depende muito do teste realizado. Os testes sorológicos conforme o tempo de infecção podem ter altos índices de falso negativos. Os testes de antígeno são mais rápidos para se ter o resultado, são mais baratos, mas perdem um pouco de sensibilidade. Por exemplo, um teste de antígeno positivo em um paciente assintomático, ou  um teste negativo em um paciente sintomático, devem ser confirmados por um RT-PCR.</div>
       ),
       trigger: 'ajuda',
+    },
+    {
+      id: 'menuQuandoTestar',
+      options: [
+        { value: 1, label: 'Quando devo realizar o teste na presença de sintomas?', trigger: 'testeComSintomas'},
+        { value: 2, label: 'Estou assintomático, devo realizar o teste?', trigger: 'assintomaticoTeste'},
+        { value: 3, label: 'Não tenho doença, mas quero visitar meus pais, posso fazer o teste?', trigger: 'visitaPaisTeste'},
+      ],
     },
     {
       id: 'testeComSintomas',
