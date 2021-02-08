@@ -430,6 +430,122 @@ const Steps = [
       trigger: 'ajuda',
     },
     {
+      id: 'teste',
+      message: 'Selecione o que você deseja saber sobre os testes para COVID-19.',
+      trigger: 'menuTestes',
+    },
+    {
+      id: 'menuTestes',
+      options: [
+        { value: 1, label: 'Quais são os testes para COVID-19 disponíveis no mercado?', trigger: 'testesDisponiveis'},
+        { value: 2, label: 'Qual teste devo realizar?', trigger: 'qualTeste'},
+        { value: 3, label: 'Quais são as indicações dos testes para a detecção da COVID-19?', trigger: 'indicacoesDosTestes'},
+        { value: 4, label: 'Qual a diferença dos testes de antígeno e de RT-PCR?', trigger: 'diferencaDosTestes'},
+        { value: 5, label: 'Posso confiar no teste de COVID-19 disponível nas farmácias?', trigger: 'confiancaTestes'},
+        { value: 6, label: 'Quando devo realizar o teste na presença de sintomas?', trigger: 'testeComSintomas'},
+        { value: 7, label: 'Estou assintomático devo realizar o teste?', trigger: 'assintomaticoTeste'},
+        { value: 8, label: 'Não tenho doença, mas quero visitar meus pais, posso fazer o teste?', trigger: 'visitaPaisTeste'},
+      ],
+    },
+    {
+      id: 'testesDisponiveis',
+      component: (
+        <div className="Div">De uma forma geral, para detecção da infecção temos os testes sorológicos que medem anticorpos; os testes de antígenos que são partículas ou substâncias do vírus que estimulam o sistema imunológico e os testes moleculares (RT-PCR), que também detectam o RNA  do vírus e são considerados o padrão-ouro para o diagnóstico.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'qualTeste',
+      component: (
+        <div className="Div">Consulte um profissional para ver a melhor opção de testagem. A presença ou ausência de sintomas, o tempo de infecção influenciam  o resultado do teste e portanto a melhor escolha do teste.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'indicacoesDosTestes',
+      component: (
+        <div className="Div">Os testes sorológicos por detectarem anticorpos, servem principalmente para identificação de infecção passada. Geralmente positiva após a  primeira (IgM), mas especialmente, terceira e quarta semana (IgM e IgG). Os testes de antígenos e RT-PCR fazem a detecção da infecção aguda.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'diferencaDosTestes',
+      component: (
+        <div className="Div">Ambos servem para detecção de infecção aguda. O RT-PCR é o padrão ouro, por ser mais sensível e específico. Os testes de antígeno são mais rápidos para se ter o resultado, são mais baratos, mas perdem um pouco de sensibilidade. Por exemplo, um teste de antígeno positivo em um paciente assintomático, ou  um teste negativo em um paciente sintomático, devem ser confirmados por um RT-PCR.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'confiancaTestes',
+      component: (
+        <div className="Div">Depende muito do teste realizado. Os testes sorológicos conforme o tempo de infecção podem ter altos índices de falso negativos. Os testes de antígeno são mais rápidos para se ter o resultado, são mais baratos, mas perdem um pouco de sensibilidade. Por exemplo, um teste de antígeno positivo em um paciente assintomático, ou  um teste negativo em um paciente sintomático, devem ser confirmados por um RT-PCR.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'testeComSintomas',
+      component: (
+        <div className="Div">Caso você esteja com sintomas gripais deve realizar o teste. O teste é mais preciso  a partir do segundo ao quinto dia de sintomas.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'assintomaticoTeste',
+      component: (
+        <div className="Div">Se você é contatante de um caso positivo, você pode realizar o teste de RT-PCR de secreção nasal e orofaringe para diagnóstico. Alguns casos de infecção cursam sem sintomas ou com sintomas mínimos. Recomenda-se então a realização do teste a partir do quinto dia de contato.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'visitaPaisTeste',
+      component: (
+        <div className="Div">Se você está assintomático, nem teve contato com alguém positivo, o teste pode trazer resultados falsos. Em uma pessoa assintomática, o RT-PCR pode ser um falso-negativo de 100 a 60% das vezes em um paciente infectado. Assim, muito cuidado ao interpretar este resultado.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'tempoDeIsolamento',
+      message: 'Selecione o que você deseja saber sobre o tempo de isolamento.',
+      trigger: 'menuTempoDeIsolamento',
+    },
+    {
+      id: 'menuTempoDeIsolamento',
+      options: [
+        { value: 1, label: 'Fui positivo para COVID-19, quanto tempo devo ficar isolado?', trigger: 'tempoParaPositivado'},
+        { value: 2, label: 'Meu teste deu negativo, posso sair do isolamento?', trigger: 'sairDoIsolamentoPosNegativo'},
+        { value: 3, label: 'Tive o diagnóstico de COVID-19 devo testar novamente para sair do isolamento?', trigger: 'testeAntesDeSairDoIsolamento'},
+        { value: 4, label: 'Posso ter uma segunda infecção pelo SARS-COV-2?', trigger: 'segundaInfeccao'},
+      ],
+    },
+    {
+      id: 'tempoParaPositivado',
+      component: (
+        <div className="Div">A transmissão do vírus se correlaciona com a replicação viral nas vias aéreas superiores. Assim a transmissão pode ocorrer principalmente de dois dias antes da apresentação dos sintomas, até 10 dias do início destes. Estudos não demonstraram vírus viáveis após o nono dia de infecção. Portanto o tempo de isolamento de um paciente é de dez dias após o início dos sintomas.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'sairDoIsolamentoPosNegativo',
+      component: (
+        <div className="Div">Caso você tenha suspeita de COVID-19 e seu teste deu negativo. Devemos analisar qual teste foi realizado e em que momento foi realizado. Se você fez um teste de RT-PCR na vigência dos sintomas, entre o segundo e o quinto dia e este foi negativo, provavelmente seus sintomas não são devidos a COVID-19, mas talvez outro vírus.  Caso você tenha feito teste de antígeno ou sorologia e este foi negativo, ele deve ser confirmado com um RT-PCR.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'testeAntesDeSairDoIsolamento',
+      component: (
+        <div className="Div">Não recomenda-se a testagem do paciente como critério para sair do isolamento. Muitos pacientes permanecem com detecção de RNA viral nas vias aéreas superiores por semanas ou meses.  Estudos não demonstraram vírus viáveis após o nono dia de infecção.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
+      id: 'segundaInfeccao',
+      component: (
+        <div className="Div">É possível um indivíduo ser reinfectado. De acordo com dados atuais da literatura, a maioria das pessoas que tiveram infecção pelo SARS-CoV-2 ficaram imunes por um período de três, até quatro meses. Indivíduos com um segundo teste de RT-PCR positivo em um intervalo igual ou superior a 90 dias entre os episódios, são suspeitos de reinfecção.</div>
+      ),
+      trigger: 'ajuda',
+    },
+    {
       id: 'geralCovid19',
       options: [
         { value: 1, label: 'O que são as novas variantes/mutações do SARS-CoV-2?', trigger: 'variantes'},
