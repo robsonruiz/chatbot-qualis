@@ -1,3 +1,5 @@
+let trigger = "#chat#bot@qualis2021";
+
 const Steps = [
     {
       id: 'ola',
@@ -686,8 +688,26 @@ const Steps = [
     },
     {
       id: 'especialista',
+      message: 'Por favor, digite o código de acesso.',
+      trigger: 'codigo',
+    },
+    {
+      id: 'codigo',
+      user: true,
+      validator: (value) => {
+        if(value == trigger){
+          return true;
+        }
+        else{
+          return 'Código inválido';
+        }
+      },
+      trigger: 'contatoEspecialista',
+    },
+    {
+      id: 'contatoEspecialista',
       component: (
-        <div className="Div">Se não consegui responder sua dúvida, você pode conversar com um de nossos especialistas clicando <a href="" className="DivLink">aqui</a>.</div>
+        <div className="Div">Se não consegui responder sua dúvida, você pode conversar com um de nossos especialistas clicando <a href="https://api.whatsapp.com/send/?phone=%2B555199420722&text&app_absent=0" className="DivLink">aqui</a>.</div>
       ),
       trigger: 'ajuda',
     },
