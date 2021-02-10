@@ -87,7 +87,7 @@ const Steps = [
       options: [
         { value: 1, label: 'Qual vacina devo tomar?', trigger: 'qualVacina'},
         { value: 2, label: 'Quanto tempo dura a proteção da vacina?', trigger: 'tempoProtecao'},
-        { value: 3, label: 'Se receber a vacina vou posso abandonar o uso de máscara?', trigger: 'usoDaMascaraPosVacina'},
+        { value: 3, label: 'Se receber a vacina posso abandonar o uso de máscara?', trigger: 'usoDaMascaraPosVacina'},
         { value: 4, label: 'A vacina altera os testes diagnósticos da COVID-19?', trigger: 'alteraTestes'},
       ],
     },
@@ -101,14 +101,14 @@ const Steps = [
     {
       id: 'seguranca',
       component: (
-        <div className="Div">Nenhuma vacina é 100% segura. Eventos raros vão ocorrer à medida que centenas de milhares de pessoas são vacinadas. Os eventos adversos mais comuns são dor no local da injeção, cansaço, mal estar, dores musculares dentro de alguns dias após a vacinação. Estes eventos podem ser controlados com uso de analgésicos como paracetamol.</div>
+        <div className="Div">Nenhuma vacina é 100% segura. Eventos raros vão ocorrer à medida que centenas de milhares de pessoas são vacinadas. Os eventos adversos mais comuns são dor no local da injeção, cansaço, mal estar, dores musculares, dentro de alguns dias após a vacinação. Estes eventos podem ser controlados com uso de analgésicos como paracetamol.</div>
       ),
       trigger: 'ajuda',
     },
     {
       id: 'contraindicacao',
       component: (
-        <div className="Div">A única contra-indicação absoluta é reações alérgicas a algum componente da vacina. Se o paciente apresentar uma reação alérgica grave à primeira dose da vacina, não deve receber a segunda dose. Pessoas que participaram de estudos com plasma convalescentes ou anticorpos monoclonais devem postergar o uso da vacina, devido a menor eficácia.</div>
+        <div className="Div">A única contra-indicação absoluta é reações alérgicas a algum componente da vacina. Se o paciente apresentar uma reação alérgica grave à primeira dose da vacina, não deve receber a segunda dose. Pessoas que participaram de estudos com plasma convalescentes ou anticorpos monoclonais devem postergar o uso da vacina, devido a possível menor eficácia da vacina relacionada a estes procedimentos.</div>
       ),
       trigger: 'ajuda',
     },
@@ -122,7 +122,7 @@ const Steps = [
     {
       id: 'gravidas',
       component: (
-        <div className="Div">Estudos observacionais demonstraram que as grávidas que adoecem têm piores desfechos. Os estudos de vacinas não incluíram mulheres grávidas. Por isso recomenda-se que seja oferecida a vacina para este grupo para que possam decidir sobre a vacinação ou não.</div>
+        <div className="Div">Estudos observacionais demonstraram que as grávidas que adoecem têm piores desfechos. Os estudos de vacinas não incluíram mulheres grávidas. Por isso recomenda-se que seja oferecida a vacina para este grupo para que possam decidir sobre a vacinação ou não. No Brasil, as gestantes não estão relacionadas como grupo de risco, portanto, não fazem parte dos grupos prioritários de vacinação.</div>
       ),
       trigger: 'ajuda',
     },
@@ -143,7 +143,7 @@ const Steps = [
     {
       id: 'reacoes',
       component: (
-        <div className="Div">Os eventos adversos mais comuns são dor no local da injeção, cansaço, mal estar, dores musculares dentro de alguns dias após a vacinação. Estes eventos podem ser controlados com uso de analgésicos como paracetamol. Geralmente os sintomas são mais comuns nos jovens. Os eventos adversos estão sendo monitorados e relatados pelas instituições que realizam a vacinação.</div>
+        <div className="Div">Os eventos adversos mais comuns são dor no local da injeção, cansaço, mal estar, dores musculares, dentro de alguns dias após a vacinação. Estes eventos podem ser controlados com uso de analgésicos como paracetamol. Geralmente os sintomas são mais comuns nos jovens.</div>
       ),
       trigger: 'ajuda',
     },
@@ -343,7 +343,7 @@ const Steps = [
     {
       id: 'impactoAmbienteTransmissao',
       component: (
-        <div className="Div">Até o momento sabe-se que o SARS-CoV-2 pode permanecer viável em diversas superfícies por períodos de tempo variáveis. Entretanto, esta não é a principal via de transmissão da COVID-19, sendo a principal a transmissão através das gotículas respiratórias. Isto não elimina a necessidade de cuidados e limpeza do ambiente, já que a transmissão indireta pode ocorrer, porém é menos provável.</div>
+        <div className="Div">Até o momento sabe-se que o SARS-CoV-2 pode permanecer viável em diversas superfícies por períodos de tempo variáveis. Entretanto, esta não é a principal via de transmissão da COVID-19. A forma mais comum de transmissão é através das gotículas respiratórias. Isto não elimina a necessidade de cuidados e limpeza do ambiente, já que a transmissão indireta pode ocorrer, porém é menos provável.</div>
       ),
       trigger: 'ajuda',
     },
@@ -393,7 +393,7 @@ const Steps = [
     {
       id: 'sintomasCovid',
       component: (
-        <div className="Div">Qualquer pessoa pode ter sintomas leves ou graves. As manifestações mais comuns são tosse, dor de garganta, dores do corpo, dor de cabeça, cansaço, congestão nasal, náusea ou vômitos, diarréia, febre e falta de ar. A perda do olfato e do paladar estão mais associados com a COVID-19 do que com outros vírus. De 17-20% das pessoas podem permanecer assintomáticas.</div>
+        <div className="Div">Qualquer pessoa pode ter sintomas leves ou graves. As manifestações mais comuns são tosse, dor de garganta, dores do corpo, dor de cabeça, cansaço, congestão nasal, náusea ou vômitos, diarréia, febre e falta de ar. A perda do olfato e do paladar estão mais associados com a COVID-19 do que com outros vírus. Dezessete a 20% das pessoas não apresentam sintomas apesar de serem infectadas.</div>
       ),
       trigger: 'ajuda',
     },
@@ -493,14 +493,14 @@ const Steps = [
     {
       id: 'qualTeste',
       component: (
-        <div className="Div">Consulte um profissional para ver a melhor opção de testagem. A presença ou ausência de sintomas, o tempo de infecção influenciam  o resultado do teste e portanto a melhor escolha do teste.</div>
+        <div className="Div">Consulte um profissional para ver a melhor opção de testagem. A presença ou ausência de sintomas, o tempo de infecção influenciam  o resultado do teste e portanto a melhor escolha do teste. Os testes moleculares (RT-PCR), que também detectam o RNA  do vírus e são considerados o padrão-ouro para o diagnóstico de infecção aguda.</div>
       ),
       trigger: 'ajuda',
     },
     {
       id: 'indicacoesDosTestes',
       component: (
-        <div className="Div">Os testes sorológicos por detectarem anticorpos, servem principalmente para identificação de infecção passada. Geralmente positiva após a  primeira (IgM), mas especialmente, terceira e quarta semana (IgM e IgG). Os testes de antígenos e RT-PCR fazem a detecção da infecção aguda.</div>
+        <div className="Div">Os testes sorológicos detectam anticorpos, portanto servem principalmente para identificação de infecção passada. Estes geralmente positivam após a primeira semana (IgM), mas especialmente, após a terceira e quarta semana (IgM e IgG) a partir do início dos sintomas. Os testes de antígenos e RT-PCR fazem a detecção da infecção aguda.</div>
       ),
       trigger: 'ajuda',
     },
@@ -536,14 +536,14 @@ const Steps = [
     {
       id: 'assintomaticoTeste',
       component: (
-        <div className="Div">Se você é contatante de um caso positivo, você pode realizar o teste de RT-PCR de secreção nasal e orofaringe para diagnóstico. Alguns casos de infecção cursam sem sintomas ou com sintomas mínimos. Recomenda-se então a realização do teste a partir do quinto dia de contato.</div>
+        <div className="Div">Se você é contactante de um caso positivo, você pode realizar o teste de RT-PCR de secreção nasal e orofaringe para diagnóstico. Alguns casos de infecção cursam sem sintomas ou com sintomas mínimos. Recomenda-se então a realização do teste a partir do quinto dia de contato.</div>
       ),
       trigger: 'ajuda',
     },
     {
       id: 'visitaPaisTeste',
       component: (
-        <div className="Div">Se você está assintomático, nem teve contato com alguém positivo, o teste pode trazer resultados falsos. Em uma pessoa assintomática, o RT-PCR pode ser um falso-negativo de 100 a 60% das vezes em um paciente infectado. Assim, muito cuidado ao interpretar este resultado.</div>
+        <div className="Div">Se você está assintomático, nem teve contato com alguém positivo, o teste pode trazer resultados falsos. Em uma pessoa assintomática, o resultado de RT-PCR pode ser falso-negativo em 100 a 60% das vezes em um paciente infectado. Assim, muito cuidado ao interpretar este resultado, nessa situação.</div>
       ),
       trigger: 'ajuda',
     },
@@ -604,7 +604,7 @@ const Steps = [
     {
       id: 'podeViajar',
       component: (
-        <div className="Div">Sim, embora não seja recomendado viajar durante a pandemia, a não ser que sejam situações necessárias. Com relação às viagens aéreas, deve-se seguir orientações básicas de precaução como manter um distanciamento mínimo de 1,5m no embarque e desembarque, utilizar máscara de tecido ou cirúrgica durante toda a viagem, cobrindo adequadamente a boca e o nariz, evitar a circulação dentro da aeronave, higienizar as mãos sempre que possível.</div>
+        <div className="Div">Sim, embora não seja recomendado viajar durante a pandemia, a não ser que sejam situações necessárias. Com relação às viagens aéreas, deve-se seguir orientações básicas de precaução como manter um distanciamento mínimo de 1,5 m no embarque e desembarque, utilizar máscara de tecido ou cirúrgica durante toda a viagem, cobrindo adequadamente a boca e o nariz, evitar a circulação dentro da aeronave, higienizar as mãos sempre que possível.</div>
       ),
       trigger: 'ajuda',
     },
