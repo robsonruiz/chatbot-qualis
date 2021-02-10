@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/chatbot-qualis/static/css/main.241c9507.chunk.css",
-    "main.js": "/chatbot-qualis/static/js/main.d5337c6e.chunk.js",
-    "main.js.map": "/chatbot-qualis/static/js/main.d5337c6e.chunk.js.map",
+    "main.js": "/chatbot-qualis/static/js/main.fde1119a.chunk.js",
+    "main.js.map": "/chatbot-qualis/static/js/main.fde1119a.chunk.js.map",
     "runtime-main.js": "/chatbot-qualis/static/js/runtime-main.d0c52dcb.js",
     "runtime-main.js.map": "/chatbot-qualis/static/js/runtime-main.d0c52dcb.js.map",
     "static/js/2.6f656d2d.chunk.js": "/chatbot-qualis/static/js/2.6f656d2d.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.d0c52dcb.js",
     "static/js/2.6f656d2d.chunk.js",
     "static/css/main.241c9507.chunk.css",
-    "static/js/main.d5337c6e.chunk.js"
+    "static/js/main.fde1119a.chunk.js"
   ]
 }
