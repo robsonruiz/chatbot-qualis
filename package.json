@@ -2,7 +2,7 @@
   "name": "chatbot-qualis",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chatbot.isarobot.ai",
+  "homepage": "https://chatbot.isarobot.ai/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
