@@ -43,6 +43,6 @@
   },
   "main": "index.js",
   "repository": "https://github.com/robsonruiz/chatbot-qualis.git",
-  "author": "Robson Ruiz <robson@portalqualis.com.br>",
+  "author": "Robson Ruiz <robsondorn@gmail.com>",
   "license": "MIT"
 }
