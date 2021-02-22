@@ -1,5 +1,8 @@
 {
   "name": "chatbot-qualis",
+  "script": "npx",
+  "interpreter": "none",
+  "args": "serve -p 3000 -T",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://chatbot.isarobot.ai/",
