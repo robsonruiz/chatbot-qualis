@@ -1,16 +1,16 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import ChatBot from 'react-simple-chatbot';
-import Logo from './logo.jpg';
+import Logo from './logo.png';
 import Steps from './steps.js';
 import './App.css';
 
 const theme = {
   background: '#f5f8fb',
-  headerBgColor: '#00b0b0',
+  headerBgColor: '#5081DF',
   headerFontColor: '#fff',
   headerFontSize: '15px',
-  botBubbleColor: '#00b0b0',
+  botBubbleColor: '#5081DF',
   botFontColor: '#fff',
   userBubbleColor: '#fff',
   userFontColor: '#4a4a4a',
