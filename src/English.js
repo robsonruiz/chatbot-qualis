@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import ChatBot from 'react-simple-chatbot';
 import Logo from './logo.png';
-import Steps from './steps.js';
+import EnglishSteps from './englishSteps.js';
 import './App.css';
 
 const theme = {
@@ -20,7 +20,7 @@ const App = () => (
   <ThemeProvider theme={theme}>
     <div className="Chatbot">
       <img src={Logo} className="Logo"/>
-      <ChatBot steps={Steps}/>
+      <ChatBot steps={EnglishSteps}/>
     </div>
   </ThemeProvider>
 );

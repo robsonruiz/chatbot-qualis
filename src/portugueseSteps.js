@@ -1,6 +1,6 @@
 let trigger = "#chat#bot@qualis2021";
 
-const Steps = [
+const PortugueseSteps = [
     {
       id: 'ola',
       message: 'Olá!',
@@ -906,4 +906,4 @@ const Steps = [
     },
   ];
 
-  export default Steps;
+  export default PortugueseSteps;

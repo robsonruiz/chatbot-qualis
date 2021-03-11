@@ -1,0 +1,61 @@
+.Language{
+    text-align: center;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+  
+.Button{
+    width: 15%;
+    min-height: 7.5vh;
+    border: 0;
+    border-radius: 30px;
+    font-size: 15px;
+    margin: 10px;
+    background-color: #5081DF;
+    color: white;
+}
+
+.TitleLanguage{
+    font-size: 25px;
+    margin: 0% 0% 5% 0%;
+}
+
+.LogoLanguage{
+    width: 30%;
+    height: 30%;
+    margin: 7.5% 0% 5% 0%;
+}
+  
+@media (max-width: 600px){
+    .Language{
+        display: block;
+        margin: 5% 10% 10% 10%;
+    }
+    
+    .LanguageText{
+        font-size: 20px;
+    }
+
+    .TitleLanguage{
+        font-size: 25px;
+        margin: 5% 0% 25% 0%;
+    }
+
+    .Button{
+        width: 42.5%;
+        min-height: 7.5vh;
+        border: 0;
+        border-radius: 30px;
+        font-size: 20px;
+        margin: 10px;
+        background-color: #5081DF;
+        color: white;       
+    }
+
+    .LogoLanguage{
+        width: 80%;
+        height: 80%;
+        margin: 30% 20% 25% 10%;
+    }
+}

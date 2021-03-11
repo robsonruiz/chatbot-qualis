@@ -7,27 +7,29 @@
   justify-content: center;
 }
 
-.Div{
-  text-align: center;
-}
+  .Div{
+    text-align: center;
+  }
 
-.DivLink{
-  color: #00b0b0;
-}
-
-.Logo{
-  width: 30%;
-  height: 30%;
-  margin: 10% 20% 10% 10%;
-}
-
-@media (max-width: 600px){
-  .Chatbot{
-    display: block;
-    margin: 5% 10% 10% 10%;
+  .DivLink{
+    color: #00b0b0;
   }
 
   .Logo{
-    margin: 5% 10% 10% 10%;
+    width: 30%;
+    height: 30%;
+    margin: 10% 20% 10% 10%;
   }
-}
+
+  @media (max-width: 600px){
+    .Chatbot{
+      display: block;
+      margin: 5% 10% 10% 10%;
+    }
+
+    .Logo{
+      width: 80%;
+      height: 80%;
+      margin: 5% 10% 10% 10%;
+    }
+  }
