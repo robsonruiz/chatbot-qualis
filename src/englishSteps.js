@@ -8,7 +8,7 @@ const EnglishSteps = [
     },
     {
       id: 'apresentacao',
-      message: "I'm Qualis's chatbot! How can I help you?",
+      message: 'Im Qualis chatbot! How can I help you?',
       trigger: 'menuPrincipal',
     },
     {
