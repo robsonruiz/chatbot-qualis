@@ -809,7 +809,7 @@ const EnglishSteps = [
       id: 'outrasInformacoes',
       component: (
         <div className="Div">
-          You can consult other information directly on our website, just click <a href="https://www.portalqualis.com.br/" className="DivLink"> here </a>!
+          You can consult other information directly on our website, just click <a href="https://www.portalqualis.com.br/" className="DivLink">here</a>!
         </div>
       ),
       trigger: 'ajudaQualis',
