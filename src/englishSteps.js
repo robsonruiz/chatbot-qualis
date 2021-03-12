@@ -2,17 +2,17 @@ let trigger = "#chat#bot@qualis2021";
 
 const EnglishSteps = [
     {
-      id: 'ola',
+      id: 'hello',
       message: 'Hello!',
-      trigger: 'apresentacao',
+      trigger: 'presentation',
     },
     {
-      id: 'apresentacao',
-      message: 'Im Qualis chatbot! How can I help you?',
-      trigger: 'menuPrincipal',
+      id: 'presentation',
+      message: "I'm Qualis's chatbot! How can I help you?",
+      trigger: 'mainMenu',
     },
     {
-      id: 'menuPrincipal',
+      id: 'mainMenu',
       options: [
         { value: 1, label: 'COVID-19 information', trigger: 'preMenuCovid19'},
         { value: 2, label: 'Qualis information', trigger: 'qualis'},
