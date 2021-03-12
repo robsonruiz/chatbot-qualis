@@ -2,17 +2,17 @@ let trigger = "#chat#bot@qualis2021";
 
 const EnglishSteps = [
     {
-      id: 'hello',
+      id: 'ola',
       message: 'Hello!',
-      trigger: 'presentation',
+      trigger: 'apresentacao',
     },
     {
-      id: 'presentation',
+      id: 'apresentacao',
       message: "I'm Qualis's chatbot! How can I help you?",
-      trigger: 'mainMenu',
+      trigger: 'menuPrincipal',
     },
     {
-      id: 'mainMenu',
+      id: 'menuPrincipal',
       options: [
         { value: 1, label: 'COVID-19 information', trigger: 'preMenuCovid19'},
         { value: 2, label: 'Qualis information', trigger: 'qualis'},
@@ -619,7 +619,7 @@ const EnglishSteps = [
       options: [
         { value: 1, label: 'When should I perform the test if I have symptoms?', trigger: 'testeComSintomas'},
         { value: 2, label: "I'm asymptomatic, should I take the test?", trigger: 'assintomaticoTeste'},
-        { value: 3, label: "I don't have symptoms, but I want to visit my parents;  can I get tested?"", trigger: 'visitaPaisTeste'},
+        { value: 3, label: "I don't have symptoms, but I want to visit my parents;  can I get tested?", trigger: 'visitaPaisTeste'},
       ],
     },
     {
