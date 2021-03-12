@@ -21,6 +21,16 @@ const Language = () => (
         ]}>
             Português
         </button>
+        <button className="Button" onClick={() => [
+            ReactDOM.render(
+                <React.StrictMode>
+                    <English />
+                </React.StrictMode>,
+                document.getElementById('root')
+            )
+        ]}>
+            English
+        </button>
     </div>
 );
 
