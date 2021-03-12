@@ -70,7 +70,7 @@ const PortugueseSteps = [
       options: [
         { value: 1, label: 'Quem tem indicação de se vacinar?', trigger: 'indicacao'},
         { value: 2, label: 'Pessoas com HIV ou imunossuprimidas podem receber a vacina?', trigger: 'hivImunossuprimidas'},
-        { value: 3, label: 'A vacina pode mudar o meu DNA?', trigger: 'alteracaoDoDNA'},
+        { value: 3, label: 'Mulheres grávidas podem receber a vacina?', trigger: 'gravidas'},
         { value: 4, label: 'Grupos especiais e crianças possuem indicação de se vacinar?', trigger: 'gruposEspeciaisCriancas'},
         { value: 5, label: 'Pessoas que tiveram COVID-19 podem receber a vacina?', trigger: 'infectadosRecebemVacina'},
       ],

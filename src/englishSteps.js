@@ -2,693 +2,821 @@ let trigger = "#chat#bot@qualis2021";
 
 const EnglishSteps = [
     {
-      id: 'hello',
+      id: 'ola',
       message: 'Hello!',
       trigger: 'apresentacao',
     },
     {
       id: 'apresentacao',
-      message: 'Eu sou o chatbot da Qualis! No que posso lhe ajudar?',
+      message: "I'm Qualis's chatbot! How can I help you?",
       trigger: 'menuPrincipal',
     },
     {
       id: 'menuPrincipal',
       options: [
-        { value: 1, label: 'Informações sobre a COVID-19', trigger: 'preMenuCovid19'},
-        { value: 2, label: 'Informações sobre a Qualis', trigger: 'qualis'},
-        { value: 3, label: 'Preciso conversar com um especialista', trigger: 'especialista'},
+        { value: 1, label: 'COVID-19 information', trigger: 'preMenuCovid19'},
+        { value: 2, label: 'Qualis information', trigger: 'qualis'},
+        { value: 3, label: 'I need to talk to an expert', trigger: 'especialista'},
       ],
     },
     {
       id: 'preMenuCovid19',
-      message: 'Por favor, selecione que tipo de informações você deseja saber sobre a COVID-19.',
+      message: 'Please select what kind of information you want to know about COVID-19.',
       trigger: 'menuCovid19',
     },
     {
       id: 'menuCovid19',
       options: [
-        { value: 1, label: 'Vacina', trigger: 'vacina'},
-        { value: 2, label: 'Medidas preventivas', trigger: 'medidasPreventivas'},
-        { value: 3, label: 'Higiene das mãos', trigger: 'higieneDasMaos'},
-        { value: 4, label: 'Limpeza do ambiente', trigger: 'limpezaDoAmbiente'},
-        { value: 5, label: 'Sintomas', trigger: 'sintomas'},
-        { value: 6, label: 'Contato durante a pandemia', trigger: 'contatoDuranteAPandemia'},
-        { value: 7, label: 'Teste de COVID-19', trigger: 'teste'},
-        { value: 8, label: 'Tempo de isolamento', trigger: 'tempoDeIsolamento'},
-        { value: 9, label: 'Viagens durante a pandemia', trigger: 'viagens'},
-        { value: 10, label: 'Informações gerais', trigger: 'geralCovid19'},
+        { value: 1, label: 'Vaccines', trigger: 'vacina'},
+        { value: 2, label: 'Preventive measures', trigger: 'medidasPreventivas'},
+        { value: 3, label: 'Hand hygiene', trigger: 'higieneDasMaos'},
+        { value: 4, label: 'Cleaning of the ambient', trigger: 'limpezaDoAmbiente'},
+        { value: 5, label: 'Symptoms', trigger: 'sintomas'},
+        { value: 6, label: 'Contact during the pandemic', trigger: 'contatoDuranteAPandemia'},
+        { value: 7, label: 'COVID-19 test', trigger: 'teste'},
+        { value: 8, label: 'Insulation time', trigger: 'tempoDeIsolamento'},
+        { value: 9, label: 'Travels during the pandemic', trigger: 'viagens'},
+        { value: 10, label: 'General information', trigger: 'geralCovid19'},
       ],
     },
     {
       id: 'vacina',
-      message: 'Selecione o que você deseja saber sobre as vacinas.',
+      message: 'Select what you want to know about vaccines.',
       trigger: 'menuVacinas',
     },
     {
       id: 'menuVacinas',
       options: [
-        { value: 1, label: 'Segurança e eficácia', trigger: 'menuSegurancaEEficacia'},
-        { value: 2, label: 'Quem pode tomar a vacina?', trigger: 'menuQuemPodeTomarAVacina'},
-        { value: 3, label: 'Doses da vacina', trigger: 'menuDosesDaVacina'},
-        { value: 4, label: 'Dúvidas gerais', trigger: 'menuDuvidasGeraisVacina'},
+        { value: 1, label: 'Safety and effectiveness', trigger: 'menuSegurancaEEficacia'},
+        { value: 2, label: 'Who can get the vaccine?', trigger: 'menuQuemPodeTomarAVacina'},
+        { value: 3, label: 'Vaccine doses', trigger: 'menuDosesDaVacina'},
+        { value: 4, label: 'General questions', trigger: 'menuDuvidasGeraisVacina'},
       ],
     },
     {
       id: 'menuSegurancaEEficacia',
       options: [
-        { value: 1, label: 'Qual a eficácia da vacina?', trigger: 'eficacia'},
-        { value: 2, label: 'A vacina é segura?', trigger: 'seguranca'},
-        { value: 3, label: 'Há alguma contra-indicação à vacina?', trigger: 'contraindicacao'},
-        { value: 4, label: 'A vacina pode mudar o meu DNA?', trigger: 'alteracaoDoDNA'},
-        { value: 5, label: 'A vacina pode me fazer ter a COVID-19?', trigger: 'infeccaoPelaVacina'},
-        { value: 6, label: 'Quais reações posso ter com a vacina?', trigger: 'reacoes'},
-        { value: 7, label: 'Eu preciso fazer algum teste para comprovar que a vacina atingiu a sua eficácia?', trigger: 'comprovaEficiencia'},
+        { value: 1, label: 'How effective is the vaccine?', trigger: 'eficacia'},
+        { value: 2, label: 'Is the vaccine safe?', trigger: 'seguranca'},
+        { value: 3, label: 'Are there any contraindications/specific reasons NOT to take the vaccine?', trigger: 'contraindicacao'},
+        { value: 4, label: 'Can the vaccine change my DNA?', trigger: 'alteracaoDoDNA'},
+        { value: 5, label: 'Can the vaccine make me get sick with the COVID-19?', trigger: 'infeccaoPelaVacina'},
+        { value: 6, label: 'What reactions can I have with the vaccine?', trigger: 'reacoes'},
+        { value: 7, label: 'Do I need to have any test done to prove that the vaccine has reached its effectiveness?', trigger: 'comprovaEficiencia'},
       ],
     },
     {
       id: 'menuQuemPodeTomarAVacina',
       options: [
-        { value: 1, label: 'Quem tem indicação de se vacinar?', trigger: 'indicacao'},
-        { value: 2, label: 'Pessoas com HIV ou imunossuprimidas podem receber a vacina?', trigger: 'hivImunossuprimidas'},
-        { value: 3, label: 'A vacina pode mudar o meu DNA?', trigger: 'alteracaoDoDNA'},
-        { value: 4, label: 'Grupos especiais e crianças possuem indicação de se vacinar?', trigger: 'gruposEspeciaisCriancas'},
-        { value: 5, label: 'Pessoas que tiveram COVID-19 podem receber a vacina?', trigger: 'infectadosRecebemVacina'},
+        { value: 1, label: 'Who should get vaccinated?', trigger: 'indicacao'},
+        { value: 2, label: 'Can people with HIV or who are immunocompromised receive the vaccine?', trigger: 'hivImunossuprimidas'},
+        { value: 3, label: 'Can pregnant women receive the vaccine?', trigger: 'gravidas'},
+        { value: 4, label: 'Is it recommended for special groups and children to get vaccinated?', trigger: 'gruposEspeciaisCriancas'},
+        { value: 5, label: 'Can people who have had COVID-19 get the vaccine?', trigger: 'infectadosRecebemVacina'},
       ],
     },
     {
       id: 'menuDosesDaVacina',
       options: [
-        { value: 1, label: 'Quantas doses da vacina preciso tomar?', trigger: 'doses'},
-        { value: 2, label: 'Qual o intervalo entre as doses da vacina?', trigger: 'intervaloDoses'},
+        { value: 1, label: 'How many doses of the vaccine do I need to take?', trigger: 'doses'},
+        { value: 2, label: 'What is the interval between the vaccine’s doses?', trigger: 'intervaloDoses'},
       ],
     },
     {
       id: 'menuDuvidasGeraisVacina',
       options: [
-        { value: 1, label: 'Qual vacina devo tomar?', trigger: 'qualVacina'},
-        { value: 2, label: 'Quanto tempo dura a proteção da vacina?', trigger: 'tempoProtecao'},
-        { value: 3, label: 'Se receber a vacina posso abandonar o uso de máscara?', trigger: 'usoDaMascaraPosVacina'},
-        { value: 4, label: 'A vacina altera os testes diagnósticos da COVID-19?', trigger: 'alteraTestes'},
+        { value: 1, label: 'Which vaccine should I get?', trigger: 'qualVacina'},
+        { value: 2, label: 'How long does the vaccine protection last?', trigger: 'tempoProtecao'},
+        { value: 3, label: 'If I get the vaccine, can I stop wearing a  mask?', trigger: 'usoDaMascaraPosVacina'},
+        { value: 4, label: 'Does the vaccine change the diagnostic tests for COVID-19?', trigger: 'alteraTestes'},
       ],
     },
     {
       id: 'eficacia',
       component: (
-        <div className="Div">As vacinas têm eficácia variável. Dos estudos em fase 3, temos as vacinas de RNA com eficácia entre 90-95% (eficácia superior que as vacinas usuais). A vacina do laboratório Astra-Zeneca (Oxford) gira em torno de 70%. O mais importante é que todas as vacinas têm alta eficácia na proteção de infecções graves. A efetividade da vacina (na vida real), especialmente em populações específicas (idosos, imunossuprimidos) ainda deve ser avaliada.</div>
+        <div className="Div">
+          Vaccines have variable rates of effectiveness. From phase 3 studies, RNA vaccines are between 90-95% effective. The vaccine from Astra-Zeneca laboratory (Oxford) is around 70% effective. Most importantly, all vaccines are highly effective in protecting against severe and critical infections. The effectiveness of the vaccine (in real life), especially in specific populations (elderly, immunosuppressed) has yet to be determined.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'seguranca',
       component: (
-        <div className="Div">Nenhuma vacina é 100% segura. Eventos raros vão ocorrer à medida que centenas de milhares de pessoas são vacinadas. Os eventos adversos mais comuns são dor no local da injeção, cansaço, mal estar, dores musculares, dentro de alguns dias após a vacinação. Estes eventos podem ser controlados com uso de analgésicos como paracetamol.</div>
+        <div className="Div">
+          No vaccine is 100% safe. Rare events will occur as hundreds of thousands of people are vaccinated. The most common adverse events related to vaccination are pain and swelling at the injection site, and tiredness, headache, and muscle pain, within a few days after vaccination. These events can be controlled with the use of analgesics such as Tylenol.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'contraindicacao',
       component: (
-        <div className="Div">A única contra-indicação absoluta é reações alérgicas a algum componente da vacina. Se o paciente apresentar uma reação alérgica grave à primeira dose da vacina, não deve receber a segunda dose. Pessoas que participaram de estudos com plasma convalescentes ou anticorpos monoclonais devem postergar o uso da vacina, devido a possível menor eficácia da vacina relacionada a estes procedimentos.</div>
+        <div className="Div">
+          The only absolute contraindication is allergic reactions to any component of the vaccine. If the patient has a severe allergic reaction to the first dose of the vaccine, s/he should not receive the second dose. People who participated in studies with convalescent plasma or monoclonal antibodies should postpone the vaccination due to the possible lesser effectiveness of the vaccine related to these procedures.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'hivImunossuprimidas',
       component: (
-        <div className="Div">Estas pessoas apresentam um risco maior de apresentar complicações relacionadas a COVID-19. Portanto, recomenda-se que sejam vacinadas, embora, possa haver risco de menor eficácia da vacina. O número de participantes com alguma imunodeficiência foi pequeno nos estudos, o que impede conclusões definitivas neste grupo de pessoas.</div>
+        <div className="Div">
+          These people are at a higher risk of having complications related to COVID-19. Therefore, it is recommended that they should be vaccinated, although there may be a risk that the vaccine is less effective. The number of participants with some immunodeficiency was small in the studies, which prevents definitive conclusions in this group of people.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'gravidas',
       component: (
-        <div className="Div">Estudos observacionais demonstraram que as grávidas que adoecem têm piores desfechos. Os estudos de vacinas não incluíram mulheres grávidas. Por isso recomenda-se que seja oferecida a vacina para este grupo para que possam decidir sobre a vacinação ou não. No Brasil, as gestantes não estão relacionadas como grupo de risco, portanto, não fazem parte dos grupos prioritários de vacinação.</div>
+        <div className="Div">
+          Observational studies have shown that pregnant women who get sick with the virus have worse symptoms than others. However, the vaccine studies did not include pregnant women. It is recommended that the vaccine be offered to this group so that they can decide whether to get vaccinated or not. In Brazil, pregnant women are not listed as a risk group and, therefore, they are not part of the priority vaccination groups.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'alteracaoDoDNA',
       component: (
-        <div className="Div">Não, esta é uma notícia falsa publicada nas mídias sociais. Nenhuma vacina aprovada para uso no Brasil ou no mundo irá alterar o DNA das pessoas vacinadas.</div>
+        <div className="Div">
+          No, this is ‘fake news’ published on social media. No vaccine approved for use in Brazil or worldwide will alter the DNA of vaccinated people.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'infeccaoPelaVacina',
       component: (
-        <div className="Div">Não. As vacinas atualmente liberadas ou em testes não são de vírus vivo ou vírus vivo atenuado, portanto, não há possibilidade de causar COVID-19.</div>
+        <div className="Div">
+          No. Vaccines currently released or being tested are not live viruses or live attenuated viruses, so there is no possibility of causing the COVID-19.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'reacoes',
       component: (
-        <div className="Div">Os eventos adversos mais comuns são dor no local da injeção, cansaço, mal estar, dores musculares, dentro de alguns dias após a vacinação. Estes eventos podem ser controlados com uso de analgésicos como paracetamol. Geralmente os sintomas são mais comuns nos jovens.</div>
+        <div className="Div">
+          The most common adverse events are pain and swelling at the injection site, tiredness, headache, muscle pain, within a few days after vaccination. These events can be controlled with the use of analgesics such as Tylenol. Symptoms are generally more common in young people.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'indicacao',
       component: (
-        <div className="Div">Qualquer pessoa com idade superior a 18 anos poderá se vacinar, quando a vacina estiver disponível e conforme cronograma estabelecido pelas autoridades sanitárias. Na fase 1 do plano de vacinação estão os grupos prioritários como os trabalhadores da área da saúde, pessoas de 60 anos ou mais que vivem em instituições de longa permanência, população indígena e idosos a partir dos 75 anos.</div>
+        <div className="Div">
+          Anyone over 18 will be able to get vaccinated when the vaccine is available and according to the schedule established by health authorities. In phase 1 of the vaccination plan there are priority groups such as health care workers, people 60 or older who live in long-term care facilities, indigenous people and the elderly, 75 and older.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'gruposEspeciaisCriancas',
       component: (
-        <div className="Div">Conforme definição do plano nacional de vacinação, grupos como gestantes, puérperas e lactantes, pacientes portadores de doenças reumáticas, oncológicos, transplantados e demais imunossuprimidos, não foram avaliados nos estudos quanto a segurança e eficácia da vacina, devendo a mesma ser realizada após avaliação cautelosa dos riscos e benefícios e com decisão compartilhada entre o indivíduo e seu médico assistente. O plano também não engloba as crianças devido a falta de estudos e evidências que demonstrem a segurança neste grupo de pessoas.</div>
+        <div className="Div">
+          According to the definition of the national vaccination plan, special groups such as pregnant women, postpartum women and lactating women, patients with rheumatic diseases, oncology, transplantation and other immunosuppressed people were not evaluated in the studies regarding the safety and efficacy of the vaccine, and it must be performed after careful evaluation of risks and benefits and with a decision shared between the individual and his/her attending physician. The plan also does not include children due to a lack of studies and evidence to demonstrate safety in this group of people.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'qualVacina',
       component: (
-        <div className="Div">Você deve tomar a que estiver disponível para você, pois todas elas foram aprovadas e passaram por rígidos padrões científicos para serem liberadas. Além disso, todas oferecem ótima eficácia na proteção contra infecções moderadas e graves.</div>
+        <div className="Div">
+          You should take whatever is available for you, as they have all been approved after strict scientific standards. In addition, they all offer excellent effectiveness in protecting against moderate and severe infections.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'doses',
       component: (
-        <div className="Div">Até o momento, as vacinas estudadas têm utilizado duas doses. A primeira que estimula o sistema imunológico inicialmente e a segunda que serve como um segundo estímulo (booster) para aumentar a taxa de proteção e torná-la mais duradoura. A segunda dose deve ser da mesma vacina administrada previamente.</div>
+        <div className="Div">
+          So far, the vaccines studied have used two doses. The first one that stimulates the immune system and the second dose that serves as a second stimulus (booster) to increase the protection rate and make it more lasting. The second dose should be the same vaccine as previously administered.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'intervaloDoses',
       component: (
-        <div className="Div">A segunda dose da vacina deve obedecer a recomendação com relação ao tempo. Se esta é administrada mais precoce pode reduzir a eficácia da vacina. Caso seja atrasada a segunda dose, não há perda com relação à eficácia. Recomenda-se que se houver atraso a segunda dose seja feita o quanto antes. Além disso, deve-se respeitar o intervalo de dose recomendado pelo fabricante, visto que o tempo pode ser diferente conforme o laboratório.</div>
+        <div className="Div">
+          The second dose of the vaccine must comply with the recommendation regarding time. If it is given earlier it may reduce the effectiveness of the vaccine. If the second dose is delayed, there is no loss in efficacy. It is recommended that if there is a delay the second dose should be taken as soon as possible. In addition, the dose range recommended by the manufacturer must be respected, as the time may differ depending on the laboratory.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'tempoProtecao',
       component: (
-        <div className="Div">Não há uma informação precisa a este respeito. Alguns dados sugerem que a proteção se aproxima de 4 meses (Vacina Moderna estudo de fase 1).</div>
+        <div className="Div">
+          There is no precise information in this regard. Experts are working to learn more about natural immunity and vaccine-induced immunity.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'comprovaEficiencia',
       component: (
-        <div className="Div">Não há recomendação de se fazer nenhum teste para comprovação da presença de anticorpos contra o vírus após a vacinação. O sistema imunológico começa a demonstrar resposta dentro de 10-14 dias da vacinação. A ausência de anticorpos não significa falha na proteção, pois outras rotas do sistema imunológico podem ser ativadas para atuar contra o vírus, mesmo na ausência de resposta humoral (IgG).</div>
+        <div className="Div">
+          There is no recommendation to carry out any tests to prove the presence of antibodies against the virus after vaccination. The immune system begins to show a response within 10-14 days after the vaccination. The absence of antibodies does not mean a failure in protection, as other routes of the immune system can be activated to act against the virus, even in the absence of an antibody response (IgG).
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'infectadosRecebemVacina',
       component: (
-        <div className="Div">Sim, estas pessoas devem receber a vacina. A pessoa deve ter se recuperado totalmente da infecção para realizar a vacina. Como, novas infecções são raras em pacientes com COVID-19 dentro de 90 dias da primeira infecção, recomenda-se aguardar este período para aplicação da vacina.</div>
+        <div className="Div">
+          Yes, these people must receive the vaccine. The person must have fully recovered from the infection to get the vaccine. As new infections are rare in patients with COVID-19 within 90 days of the first infection, it is recommended to wait this period before receiving the vaccine.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'alteraTestes',
       component: (
-        <div className="Div">A vacina não altera os testes de RT-PCR ou os testes de antígeno para diagnóstico de infecção aguda. Elas geram anticorpos contra a proteína S (Spike) do SARS-CoV-2. Alguns testes sorológicos detectam estes anticorpos e outros não. Os fabricantes dos testes devem informar sobre esta particularidade do teste.</div>
+        <div className="Div">
+          The vaccine does not alter RT-PCR tests or antigen tests for the diagnosis of acute infection. It generates antibodies against the SARS-CoV-2 S protein. Some serological tests detect these antibodies and others do not. The test manufacturers must inform you about this particularities of the test.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'usoDaMascaraPosVacina',
       component: (
-        <div className="Div">As pessoas que receberam as duas doses da vacina e aguardaram o tempo para haver a resposta do sistema imunológico (2-4 semanas após a segunda dose) vão poder conviver com seus familiares próximos, fazer jantares, abraçar seus netos, coisas que um não-vacinado não pode. Apesar disso,  até que tenhamos um contingente grande de vacinados e redução das taxas de infecção, as medidas de uso de máscara e distanciamento permanecerão, especialmente em um cenário de novas variantes virais.</div>
+        <div className="Div">
+          People who received both doses of the vaccine and waited for the immune system to respond (2-4 weeks after the second dose) will be able to live with their close family, have dinner, hug their grandchildren; things that a non-vaccinated person cannot do. Despite this, until we have a large contingent of people vaccinated and reduced rates of infection, the measures of wearing masks and social distancing will remain, especially considering the new viral variants.
+        </div>
       ),
       trigger: 'ajudaVacina',
     },
     {
       id: 'medidasPreventivas',
-      message: 'Selecione o que você deseja saber sobre as medidas preventivas.',
+      message: 'Select what you want to know about preventive measures.',
       trigger: 'menuMedidasPreventivas',
     },
     {
       id: 'menuMedidasPreventivas',
       options: [
-        { value: 1, label: 'Como posso me prevenir da COVID-19?', trigger: 'prevencaoCovid'},
-        { value: 2, label: 'Qual máscara devo usar?', trigger: 'qualMascara'},
-        { value: 3, label: 'Com que frequência devo trocar a minha máscara?', trigger: 'frequenciaTrocaMascara'},
-        { value: 4, label: 'Como devo lavar a minha máscara?', trigger: 'lavarMascara'},
-        { value: 5, label: 'Qual a diferença entre a máscara cirúrgica e a N95?', trigger: 'diferencaCirurgiaN95'},
-        { value: 6, label: 'Existe diferença entre a capacidade de filtro das máscaras de tecido?', trigger: 'capacidadeFiltro'},
+        { value: 1, label: 'How can I protect myself from COVID-19?', trigger: 'prevencaoCovid'},
+        { value: 2, label: 'Which mask should I wear?', trigger: 'qualMascara'},
+        { value: 3, label: 'How often should I change my mask?', trigger: 'frequenciaTrocaMascara'},
+        { value: 4, label: 'How should I wash my mask?', trigger: 'lavarMascara'},
+        { value: 5, label: 'What is the difference between the surgical mask and the N95?', trigger: 'diferencaCirurgiaN95'},
+        { value: 6, label: 'Is there a difference between the filter capacity of fabric masks?', trigger: 'capacidadeFiltro'},
       ],
     },
     {
       id: 'prevencaoCovid',
       component: (
-        <div className="Div">O uso universal de máscara além das outras medidas de saúde pública recomendadas (distanciamento, higiene de mãos) devem ser prioridade enquanto não houver um número suficiente de pessoas vacinadas para conter a disseminação do vírus.</div>
+        <div className="Div">
+          The universal use of masks in addition to the other recommended public health measures, such as social distancing and hand washing should be a priority as long as there are not enough people vaccinated to contain the spread of the virus.
+        </div>
       ),
       trigger: 'ajudaMedidasPreventivas',
     },
     {
       id: 'qualMascara',
       component: (
-        <div className="Div">Na comunidade o objetivo principal do mascaramento universal é o controle da fonte emissora de gotículas. Assim, máscaras de tecido (reutilizáveis) ou máscaras cirúrgicas (descartáveis) podem e devem ser utilizadas.</div>
+        <div className="Div">
+          In the community, the main objective of universal masking is to control the spread of droplets. Thus, fabric masks (reusable) or surgical masks (disposable) can and should be used.
+        </div>
       ),
       trigger: 'ajudaMedidasPreventivas',
     },
     {
       id: 'frequenciaTrocaMascara',
       component: (
-        <div className="Div">Em caso de uso prolongado o recomendado é trocar a máscara a cada 3 horas. Já em casos de saídas rápidas, como ir ao mercado ou farmácia, recomenda-se a troca diária. A máscara também deve ser trocada sempre que estiver molhada devido a tosse, espirro, fala ou respiração.</div>
+        <div className="Div">
+          In case of prolonged use, it is recommended to change your mask every 3 hours. In the case of quick departures, such as going to the market or pharmacy, daily change is recommended. The mask should also be changed whenever it is wet due to coughing, sneezing, speech, or breathing.
+        </div>
       ),
       trigger: 'ajudaMedidasPreventivas',
     },
     {
       id: 'lavarMascara',
       component: (
-        <div className="Div">A máscara deve ser lavada com água e sabão em água corrente individualmente e após deve ser deixada de molho por 20 a 30 minutos em uma solução de água sanitária, contendo duas colheres de sopa do produto para 1L de água, ou, 1 colher de sopa para 500 ml. Enxaguar bem em água corrente e deixar secar ao ar livre.</div>
+        <div className="Div">
+          The mask should be washed individually with soap and water under running water and then soaked for 20 to 30 minutes in a bleach solution:  2 tablespoons of bleach to 1L of water, or, 1 tablespoon to 500 ml. Rinse well under running water and allow it to air dry.
+        </div>
       ),
       trigger: 'ajudaMedidasPreventivas',
     },
     {
       id: 'diferencaCirurgiaN95',
       component: (
-        <div className="Div">As máscaras cirúrgicas são efetivas em 89% na filtragem de partículas de 0,2 micrômetros, enquanto que as máscaras N95 filtram partículas menores que 0,05 micrômetros em 95-99% das vezes. As máscaras N95 tem uma vedação melhor ao rosto. Ambas são indicadas para uso por profissionais de saúde nos seus locais de trabalho.</div>
+        <div className="Div">
+          Surgical masks are 89% effective in filtering particles of 0.2 micrometers, while N95 masks filter particles smaller than 0.05 micrometers 95-99% of the time. N95 masks have a better seal to the face. Both are recommended for use by healthcare professionals in their workplaces.
+        </div>
       ),
       trigger: 'ajudaMedidasPreventivas',
     },
     {
       id: 'capacidadeFiltro',
       component: (
-        <div className="Div">Dependendo do tecido a capacidade de filtragem é diferente. A efetividade contra partículas de 0,02 micrômetros é: tecido de saco de aspirador de pó (86%), pano de prato (72%), camiseta (70%), fronha de travesseiro (57-68%), linho (62%), seda (54%), camiseta 100% algodão (51%), cachecol (57%).</div>
+        <div className="Div">
+          Depending on the fabric, the filtering capacity is different. For example, the effectiveness against 0.02 micrometer particles is: vacuum cleaner bag fabric (86%), dish towel (72%), T-shirt (70%), pillowcase (57-68%), linen (62%), silk (54%), 100% cotton T-shirt (51%), scarf (57%).
+        </div>
       ),
       trigger: 'ajudaMedidasPreventivas',
     },
     {
       id: 'higieneDasMaos',
-      message: 'Selecione o que você deseja saber sobre higiene das mãos.',
+      message: 'Select what you want to know about hand hygiene.',
       trigger: 'menuHigieneDasMaos',
     },
     {
       id: 'menuHigieneDasMaos',
       options: [
-        { value: 1, label: 'Com que produtos devo higienizar as mãos?', trigger: 'produtosHigienizacaoMaos'},
-        { value: 2, label: 'Água e sabonete são mais eficazes que o álcool gel?', trigger: 'aguaSabonete'},
-        { value: 3, label: 'Qual a técnica correta da higiene de mãos com preparações alcoólicas (gel ou solução)?', trigger: 'higieneAlcool'},
-        { value: 4, label: 'Qual a técnica correta da higiene de mãos com água e sabonete?', trigger: 'higieneAguaSabonete'},
-        { value: 5, label: 'Quais são os momentos que devo higienizar as mãos?', trigger: 'momentosHigiene'},
+        { value: 1, label: 'What products should I sanitize my hands with?', trigger: 'produtosHigienizacaoMaos'},
+        { value: 2, label: 'Is soap and water more effective than alcohol gel?', trigger: 'aguaSabonete'},
+        { value: 3, label: 'What is the correct hand hygiene technique with alcohol gel or solution?', trigger: 'higieneAlcool'},
+        { value: 4, label: 'What is the correct hand hygiene technique with soap and water?', trigger: 'higieneAguaSabonete'},
+        { value: 5, label: 'When should I sanitize my hands?', trigger: 'momentosHigiene'},
       ],
     },
     {
       id: 'produtosHigienizacaoMaos',
       component: (
-        <div className="Div">A higienização das mãos pode ser realizada utilizando água e sabonete ou álcool gel. A escolha de um produto ou outro dependerá da situação e disponibilidade. A água e sabonete são sempre recomendados quando as mãos estiverem visivelmente sujas. Já o álcool gel poderá ser utilizado em todas as outras situações, já que é mais fácil de estar prontamente disponível em qualquer lugar.</div>
+        <div className="Div">
+          You can wash your hands using water and soap or alcohol gel. The choice of one product or another will depend on the situation and availability. Soap and water are always recommended when hands are visibly dirty. The alcohol gel can be used in all other situations, since it is often readily available in most places.
+        </div>
       ),
       trigger: 'ajudaHigieneDasMaos',
     },
     {
       id: 'aguaSabonete',
       component: (
-        <div className="Div">A higienização das mãos com preparações alcoólicas e com água e sabão são eficazes, entretanto alguns estudos mostram que o álcool gel pode ser mais efetivo que a higienização com água e sabonete, por ter uma ação bactericida e virucida que o sabonete comum não tem.</div>
+        <div className="Div">
+          Both hand hygiene practices of using alcohol gel or soap and water are effective, however some studies show that alcohol based hand gel can be more effective than just washing your hands with water and soap, as it has a bactericidal and virucidal action that ordinary soaps do not have.
+        </div>
       ),
       trigger: 'ajudaHigieneDasMaos',
     },
     {
       id: 'higieneAlcool',
       component: (
-        <div className="Div">A​plique uma quantidade suficiente de preparação alcoólica em uma das mãos. Friccione as palmas, o dorso, entre os dedos, polpas digitais, polegares, unhas e punhos. Quando estiverem secas, suas mãos estarão seguras.</div>
+        <div className="Div">
+          Apply a sufficient amount of alcohol gel or solution to one hand. Rub the palms, the back, between the fingers,tips of fingers, thumbs, nails and wrists. When they are dry, your hands are safe.
+        </div>
       ),
       trigger: 'ajudaHigieneDasMaos',
     },
     {
       id: 'higieneAguaSabonete',
       component: (
-        <div className="Div">Abrir a torneira e molhar as mãos. Aplicar na palma da mão quantidade suficiente de sabonete líquido. Friccione ou ensaboe as palmas, o dorso, entre os dedos, polpas digitais, polegares, unhas e punhos. Enxaguar as mãos, retirando os resíduos dos dedos para os punhos. Evitar contato direto das mãos ensaboadas com a torneira. Enxugar as mãos com papel toalha. Fechar a torneira com papel toalha. Nunca use as mãos para fechar as torneiras.</div>
+        <div className="Div">
+          Open the tap and get your hands wet. Apply a sufficient amount of liquid soap to the palm. Rub or lather the palms, the back, between the fingers, tips of fingers, thumbs, nails and wrists. Rinse hands removing residues from fingers to wrists. Avoid direct contact of the soapy hands with the tap. Wipe hands with a paper towel. Close the tap with the paper towels. Never use hands to close the taps.
+        </div>
       ),
       trigger: 'ajudaHigieneDasMaos',
     },
     {
       id: 'momentosHigiene',
       component: (
-        <div className="Div">Quando estiverem visivelmente sujas. Após usar transporte público. Após ir ao banheiro. Após tossir ou espirrar. Antes de preparar refeições. Antes de se alimentar. Antes e após cuidar de alguém doente. Ao chegar em casa. Ao chegar em algum lugar público, como restaurante, farmácia ou supermercado. Ao sair de algum lugar público. Antes de tocar olhos, nariz ou boca. Na prática deve ser realizada sempre que se considerar que as mãos possam estar contaminadas.</div>
+        <div className="Div">
+          When they are visibly dirty; After using public transport; After going to the bathroom; After coughing or sneezing; Before preparing meals; Before eating; Before and after caring for someone who is sick; Upon arriving home; When arriving at a public place, such as a restaurant, pharmacy or supermarket; When leaving a public place; Before touching eyes, nose or mouth; In practice it should be carried out whenever it is considered that the hands may be contaminated.
+        </div>
       ),
       trigger: 'ajudaHigieneDasMaos',
     },
     {
       id: 'limpezaDoAmbiente',
-      message: 'Selecione o que você deseja saber sobre limpeza do ambiente.',
+      message: 'Select what you want to know about cleaning the environment.',
       trigger: 'menuLimpezaDoAmbiente',
     },
     {
       id: 'menuLimpezaDoAmbiente',
       options: [
-        { value: 1, label: 'Qual o impacto do ambiente na transmissão do SARS-CoV-2?', trigger: 'impactoAmbienteTransmissao'},
-        { value: 2, label: 'As roupas transmitem o vírus?', trigger: 'roupasTransmitem'},
-        { value: 3, label: 'Devo higienizar as compras do supermercado?', trigger: 'higienizarComprasMercado'},
-        { value: 4, label: 'O uso de tapetes sanitizantes são efetivos na contenção da transmissão?', trigger: 'tapetesSanitizantes'},
-        { value: 5, label: 'Quais são os locais de maior risco de adquirir a infecção?', trigger: 'locaisMaiorRisco'},
+        { value: 1, label: 'Can the SARS-CoV-2 virus be transmitted via surfaces?', trigger: 'impactoAmbienteTransmissao'},
+        { value: 2, label: 'Do clothes transmit the virus?', trigger: 'roupasTransmitem'},
+        { value: 3, label: 'Should I sanitize purchases from the grocery store?', trigger: 'higienizarComprasMercado'},
+        { value: 4, label: 'Are the use of sanitizing mats (for shoes) effective in containing transmission?', trigger: 'tapetesSanitizantes'},
+        { value: 5, label: 'What places have a higher risk of acquiring the infection?', trigger: 'locaisMaiorRisco'},
       ],
     },
     {
       id: 'impactoAmbienteTransmissao',
       component: (
-        <div className="Div">Até o momento sabe-se que o SARS-CoV-2 pode permanecer viável em diversas superfícies por períodos de tempo variáveis. Entretanto, esta não é a principal via de transmissão da COVID-19. A forma mais comum de transmissão é através das gotículas respiratórias. Isto não elimina a necessidade de cuidados e limpeza do ambiente, já que a transmissão indireta pode ocorrer, porém é menos provável.</div>
+        <div className="Div">
+          So far, it is known that SARS-CoV-2 can remain viable on different surfaces for varying periods of time. However, this is not the main route of transmission for COVID-19. The most common route of transmission is through respiratory droplets. This does not eliminate the need for care and cleaning of surfaces, as indirect transmission can occur, however it is less likely.
+        </div>
       ),
       trigger: 'ajudaLimpezaDoAmbiente',
     },
     {
       id: 'roupasTransmitem',
       component: (
-        <div className="Div">Não, uma vez que as roupas não entram em contato direto com as nossas mucosas (boca, nariz e olhos). Estudos demonstraram que  as roupas de profissionais de saúde que cuidavam de pacientes com COVID-19 em hospitais, não ofereciam riscos na transmissão por não conter partículas virais.</div>
+        <div className="Div">
+          No, since the clothes do not come in direct contact with our mucous membranes (mouth, nose and eyes). Studies have shown that the clothes of healthcare professionals who cared for patients with COVID-19 in hospitals did not pose any risks in transmission because they did not contain viral particles.
+        </div>
       ),
       trigger: 'ajudaLimpezaDoAmbiente',
     },
     {
       id: 'higienizarComprasMercado',
       component: (
-        <div className="Div">Não há comprovação de transmissão da infecção por alimentos. O ambiente também tem menor importância na transmissão. Ainda,  produtos utilizados no ambiente doméstico podem não ser adequados para a desinfecção de embalagens. Reforça-se a necessidade de higienizar as mãos sempre após tocas embalagens e antes de preparar os alimentos e manter as superfícies domésticas limpas.</div>
+        <div className="Div">
+          There is no evidence of transmission via the infection by food. Physical surfaces are a minor factor in transmission. Also, household cleaning products may not be suitable for disinfecting packaging. It is recommended to wash your hands after touching packaging and before preparing food, and to keep household surfaces clean.
+        </div>
       ),
       trigger: 'ajudaLimpezaDoAmbiente',
     },
     {
       id: 'tapetesSanitizantes',
       component: (
-        <div className="Div">Não. Não há comprovação científica de que os tapetes sanitizantes sejam efetivos na redução da transmissão da COVID-19. Além disso, os sapatos não estão associados à transmissão da COVID-19. Após tocar sapatos, ou pegar qualquer objeto que tenha caído, devemos higienizar as nossas mãos.</div>
+        <div className="Div">
+          No. There is no scientific evidence that sanitizing mats are effective in reducing the transmission of COVID-19. In addition, the shoes are not associated with the transmission of the COVID-19. After touching shoes, or picking up any object that has fallen, though, you should wash your hands.
+        </div>
       ),
       trigger: 'ajudaLimpezaDoAmbiente',
     },
     {
       id: 'locaisMaiorRisco',
       component: (
-        <div className="Div">Locais com maior número de pessoas em que o distanciamento não possa ser mantido. Locais onde haja uma menor renovação de ar. Ambientes fechados, como restaurantes onde haja a necessidade de retirada das máscaras. Além das instituições de saúde ou instituições de longa permanência.</div>
+        <div className="Div">
+          Places with a large number of people where social distance cannot be maintained. Places where there is little air circulation. Indoor environments, such as restaurants, where there is a need to remove the masks. In addition, health institutions or long-term care facilities also pose a greater risk of acquiring the infection.
+        </div>
       ),
       trigger: 'ajudaLimpezaDoAmbiente',
     },
     {
       id: 'sintomas',
-      message: 'Selecione o que você deseja saber sobre os sintomas da COVID-19.',
+      message: 'Select what you want to know about the symptoms of COVID-19.',
       trigger: 'menuSintomas',
     },
     {
       id: 'menuSintomas',
       options: [
-        { value: 1, label: 'Quais os sintomas da COVID-19?', trigger: 'sintomasCovid'},
-        { value: 2, label: 'Estou com sintomas da COVID-19, devo procurar atendimento médico?', trigger: 'pessoaComSintomas'},
-        { value: 3, label: 'Onde devo procurar atendimento médico?', trigger: 'ondeProcurarAtendimento'},
-        { value: 4, label: 'Estou com sintomas da COVID-19, devo me afastar das minhas atividades?', trigger: 'afastamentoPorSintomas'},
-        { value: 5, label: 'Quanto tempo é necessário para o desenvolvimento dos sintomas?', trigger: 'tempoDesenvolvimentoSintomas'},
+        { value: 1, label: 'What are COVID-19 symptoms?', trigger: 'sintomasCovid'},
+        { value: 2, label: 'I have COVID-19 symptoms; should I seek medical attention?', trigger: 'pessoaComSintomas'},
+        { value: 3, label: 'Where should I seek medical care?', trigger: 'ondeProcurarAtendimento'},
+        { value: 4, label: 'I have COVID-19 symptoms, should I stay away from my normal activities?', trigger: 'afastamentoPorSintomas'},
+        { value: 5, label: 'How long does it take for symptoms to develop?', trigger: 'tempoDesenvolvimentoSintomas'},
       ],
     },
     {
       id: 'sintomasCovid',
       component: (
-        <div className="Div">Qualquer pessoa pode ter sintomas leves ou graves. As manifestações mais comuns são tosse, dor de garganta, dores do corpo, dor de cabeça, cansaço, congestão nasal, náusea ou vômitos, diarréia, febre e falta de ar. A perda do olfato e do paladar estão mais associados com a COVID-19 do que com outros vírus. Dezessete a 20% das pessoas não apresentam sintomas apesar de serem infectadas.</div>
+        <div className="Div">
+          You can have mild or severe symptoms. The most common symptoms are fever (44-94%), cough (68-83%), body pain (11-63%), upper airway symptoms (sore throat, nasal congestion, runny nose - 5-61%), shortness of breath (11-40%), tiredness (23-38%), headache (8-14%), nausea, vomiting or diarrhea (3-17%), mental confusion (9%). Loss of smell and taste (70%) is more associated with COVID-19 than with other viruses. 17-20% of people have no symptoms despite being infected.
+        </div>
       ),
       trigger: 'ajudaSintomas',
     },
     {
       id: 'pessoaComSintomas',
       component: (
-        <div className="Div">Sempre que você estiver com muitos sintomas, seria ideal buscar auxílio médico. Os sintomas que significam maior gravidade são, dificuldade para respirar, fala entrecortada, cansaço aos esforços mínimos, dor no peito persistente, dificuldade de permanecer acordado, palidez, ou confusão mental.</div>
+        <div className="Div">
+          Whenever you have a lot of symptoms, you should seek medical help. The symptoms that mean greater severity are difficulty in breathing, difficulty speaking, tiredness with minimal efforts, persistent chest pain, difficulty in staying awake, skin pallor, or mental confusion.
+        </div>
       ),
       trigger: 'ajudaSintomas',
     },
     {
       id: 'ondeProcurarAtendimento',
       component: (
-        <div className="Div">Contate seu médico de confiança; ou busque os locais de atendimento de seu convênio; ou busque o posto de saúde de sua região. Os postos de saúde estão equipados com insumos para o diagnóstico adequado da COVID-19.</div>
+        <div className="Div">
+          Contact your trusted doctor, or search the places where your health insurance service works, or seek the public health center in your region. The public health centers are equipped with supplies for the proper diagnosis of COVID-19.
+        </div>
       ),
       trigger: 'ajudaSintomas',
     },
     {
       id: 'afastamentoPorSintomas',
       component: (
-        <div className="Div">Sim, é importante permanecer em isolamento domiciliar até a definição se você está infectado. Caso confirme o diagnóstico você deve permanecer em isolamento por aproximadamente 10 dias do começo dos sintomas se estiver com melhora clínica.</div>
+        <div className="Div">
+          Yes, it is important to remain isolated at home until it is determined if you are infected. If you are confirmed with a positive diagnosis, you should remain in isolation for approximately 10 days from the onset of symptoms, if you are improving.
+        </div>
       ),
       trigger: 'ajudaSintomas',
     },
     {
       id: 'tempoDesenvolvimentoSintomas',
       component: (
-        <div className="Div">Em média, os sintomas se desenvolvem entre o segundo e o sétimo dia do contato. Em torno de 95% dos pacientes já desenvolveram sintomas com 12 dias de contato. Catorze dias é o prazo final para desenvolvimento de sintomas a partir do dia de contato.</div>
+        <div className="Div">
+          On average, symptoms develop between the second and seventh day of contact. Around 95% of patients develop symptoms within 12 days of contact. Fourteen days is the deadline for developing symptoms from the day of contact.
+        </div>
       ),
       trigger: 'ajudaSintomas',
     },
     {
       id: 'contatoDuranteAPandemia',
-      message: 'Selecione o que você deseja saber sobre contatos durante a pandemia.',
+      message: 'Select what you want to know about contacts during the pandemic.',
       trigger: 'menuContato',
     },
     {
       id: 'menuContato',
       options: [
-        { value: 1, label: 'O que considero contato de um caso positivo?', trigger: 'consideraContatoPositivo'},
-        { value: 2, label: 'Sou contato de um caso positivo?', trigger: 'casoPositivo'},
-        { value: 3, label: 'Meu filho (a) está com COVID-19, posso ir trabalhar?', trigger: 'filhoComCovid'},
-        { value: 4, label: 'Meu companheiro (a) está com sintomas, posso ir trabalhar?', trigger: 'companheiroComSintomas'},
+        { value: 1, label: 'What do I consider ‘coming into contact with a positive case’?', trigger: 'consideraContatoPositivo'},
+        { value: 2, label: 'What do I do if I am in contact with a positive case?', trigger: 'casoPositivo'},
+        { value: 3, label: 'My child has COVID-19, can I go to work?', trigger: 'filhoComCovid'},
+        { value: 4, label: 'My partner has symptoms, can I go to work?', trigger: 'companheiroComSintomas'},
       ],
     },
     {
       id: 'consideraContatoPositivo',
       component: (
-        <div className="Div">Se você convive na mesma casa de um caso positivo, você é considerado contato. Ou se você estiver próximo de um caso positivo,  a distância de 2 metros ou menos, por pelo menos 15 minutos.</div>
+        <div className="Div">
+          If you live in the same house as someone who is positive for the virus, you are considered ‘in contact.’ Or, if you have been in close proximity (2 meters or less AND for at least 15 minutes ) to someone who is positive for the virus.
+        </div>
       ),
       trigger: 'ajudaContato',
     },
     {
       id: 'casoPositivo',
       component: (
-        <div className="Div">Você deve ficar alerta para a presença de sintomas. Entre dois e sete dias metade das pessoas manifestam sinais e sintomas. Como há a possibilidade de transmissão do vírus na fase pré-sintomática (48h antes do início dos sintomas) é importante ficar alerta a qualquer indício. A testagem de RT-PCR pode ser realizada, preferentemente, no quinto dia do contato se a pessoa estiver assintomática.</div>
+        <div className="Div">
+          You should be alert for the presence of symptoms. Between two and seven days, half of the people show signs and symptoms. As there is a possibility of transmission of the virus in the pre-symptomatic phase (48 hours before the onset of symptoms) it is important to be alert for any signs. RT-PCR testing can be performed, preferably, on the fifth day of contact, if the person is asymptomatic.
+        </div>
       ),
       trigger: 'ajudaContato',
     },
     {
       id: 'filhoComCovid',
       component: (
-        <div className="Div">O convívio familiar é a situação de maior risco de transmissão, com taxa de transmissão em torno de 30%. Portanto, se alguém da sua casa estiver doente, você deve ficar em precaução em casa por até 14 dias do início dos sintomas da pessoa doente. Caso você manifeste algum sintoma, realize o teste de RT-PCR.</div>
+        <div className="Div">
+          Family life is the situation with the highest risk of transmission, with a rate of around 30%. Therefore, if someone in your household is ill, you should take precautions at home for up to 14 days from the onset of the sick person's symptoms. If you experience any symptoms, perform the RT-PCR test.
+        </div>
       ),
       trigger: 'ajudaContato',
     },
     {
       id: 'companheiroComSintomas',
       component: (
-        <div className="Div">O convívio familiar é a situação de maior risco de transmissão, com taxa de transmissão em torno de 30%. Portanto, se alguém da sua casa estiver doente, você deve ficar em precaução em casa por até 14 dias do início dos sintomas da pessoa doente. Caso você manifeste algum sintoma, realize o teste de RT-PCR.</div>
+        <div className="Div">
+          Family life is the situation with the highest risk of transmission, with a rate of around 30%. Therefore, if someone in your household is ill, you should take precautions at home for up to 14 days from the onset of the sick person's symptoms. If you experience any symptoms, perform the RT-PCR test.
+        </div>
       ),
       trigger: 'ajudaContato',
     },
     {
       id: 'teste',
-      message: 'Selecione o que você deseja saber sobre os testes para COVID-19.',
+      message: 'Select what you want to know about the tests for COVID-19.',
       trigger: 'menuTestes',
     },
     {
       id: 'menuTestes',
       options: [
-        { value: 1, label: 'Quais são os testes para COVID-19 disponíveis no mercado?', trigger: 'testesDisponiveis'},
-        { value: 2, label: 'Qual teste devo realizar?', trigger: 'qualTeste'},
-        { value: 3, label: 'Quais são as indicações dos testes para a detecção da COVID-19?', trigger: 'indicacoesDosTestes'},
-        { value: 4, label: 'Qual a diferença dos testes de antígeno e de RT-PCR?', trigger: 'diferencaDosTestes'},
-        { value: 5, label: 'Posso confiar no teste de COVID-19 disponível nas farmácias?', trigger: 'confiancaTestes'},
-        { value: 6, label: 'Não sei se preciso realizar o teste', trigger: 'menuQuandoTestar'},
+        { value: 1, label: 'What  COVID-19 tests are available?', trigger: 'testesDisponiveis'},
+        { value: 2, label: 'Which test should I get?', trigger: 'qualTeste'},
+        { value: 3, label: 'What are the test indications for the detection of COVID-19?', trigger: 'indicacoesDosTestes'},
+        { value: 4, label: 'What is the difference between antigen and RT-PCR tests?', trigger: 'diferencaDosTestes'},
+        { value: 5, label: 'Can I trust the COVID-19 test available at pharmacies?', trigger: 'confiancaTestes'},
+        { value: 6, label: "I don't know if I need to take the test", trigger: 'menuQuandoTestar'},
       ],
     },
     {
       id: 'testesDisponiveis',
       component: (
-        <div className="Div">De uma forma geral, para detecção da infecção temos os testes sorológicos que medem anticorpos; os testes de antígenos que são partículas ou substâncias do vírus que estimulam o sistema imunológico e os testes moleculares (RT-PCR), que também detectam o RNA  do vírus e são considerados o padrão-ouro para o diagnóstico.</div>
+        <div className="Div">
+          In general, for the detection of infection, we have serum tests that measure antibodies; the tests for antigens (particles or substances of the virus that stimulate the immune system) and the molecular tests (RT-PCR), which also detect the RNA of the virus and are considered the gold standard for diagnosis.
+        </div>
       ),
       trigger: 'ajudaTestes',
     },
     {
       id: 'qualTeste',
       component: (
-        <div className="Div">Consulte um profissional para ver a melhor opção de testagem. A presença ou ausência de sintomas, o tempo de infecção influenciam  o resultado do teste e portanto a melhor escolha do teste. Os testes moleculares (RT-PCR), que também detectam o RNA  do vírus e são considerados o padrão-ouro para o diagnóstico de infecção aguda.</div>
+        <div className="Div">
+          You should seek a healthcare professional to assess the best testing option. The presence or absence of symptoms and the time of infection can influence the test result, and therefore the best choice of test. Molecular tests (RT-PCR), which also detect the virus's RNA, are considered the gold standard for the diagnosis of acute infection.
+        </div>
       ),
       trigger: 'ajudaTestes',
     },
     {
       id: 'indicacoesDosTestes',
       component: (
-        <div className="Div">Os testes sorológicos detectam anticorpos, portanto servem principalmente para identificação de infecção passada. Estes geralmente positivam após a primeira semana (IgM), mas especialmente, após a terceira e quarta semana (IgM e IgG) a partir do início dos sintomas. Os testes de antígenos e RT-PCR fazem a detecção da infecção aguda.</div>
+        <div className="Div">
+          Tests of a body’s serum can detect antibodies, so they mainly identify past infection. These are usually positive after the first week (IgM), but especially after the third and fourth week (IgM and IgG) after the onset of symptoms. Antigen and RT-PCR tests detect current infection.
+        </div>
       ),
       trigger: 'ajudaTestes',
     },
     {
       id: 'diferencaDosTestes',
       component: (
-        <div className="Div">Ambos servem para detecção de infecção aguda. O RT-PCR é o padrão ouro, por ser mais sensível e específico. Os testes de antígeno são mais rápidos para se ter o resultado, são mais baratos, mas perdem um pouco de sensibilidade. Por exemplo, um teste de antígeno positivo em um paciente assintomático, ou  um teste negativo em um paciente sintomático, devem ser confirmados por um RT-PCR.</div>
+        <div className="Div">
+          Both detect acute (the rapid onset of) infection. RT-PCR is the gold standard, as it is more sensitive and specific. Antigen tests (‘rapid tests’) are quicker to get the result and they are cheaper, but they lose some sensitivity. For example, a positive antigen test in an asymptomatic patient, or a negative test in a symptomatic patient, must be confirmed by an RT-PCR.
+        </div>
       ),
       trigger: 'ajudaTestes',
     },
     {
       id: 'confiancaTestes',
       component: (
-        <div className="Div">Depende muito do teste realizado. Os testes sorológicos conforme o tempo de infecção podem ter altos índices de falso negativos. Os testes de antígeno são mais rápidos para se ter o resultado, são mais baratos, mas perdem um pouco de sensibilidade. Por exemplo, um teste de antígeno positivo em um paciente assintomático, ou  um teste negativo em um paciente sintomático, devem ser confirmados por um RT-PCR.</div>
+        <div className="Div">
+          It depends on the test performed. Depending on the time of infection, serum based tests can have high rates of false negatives. Antigen tests are quicker to get the result, are cheaper, but they lose some sensitivity. For example, a positive antigen test in an asymptomatic patient, or a negative test in a symptomatic patient, must be confirmed by an RT-PCR
+        </div>
       ),
       trigger: 'ajudaTestes',
     },
     {
       id: 'menuQuandoTestar',
       options: [
-        { value: 1, label: 'Quando devo realizar o teste na presença de sintomas?', trigger: 'testeComSintomas'},
-        { value: 2, label: 'Estou assintomático, devo realizar o teste?', trigger: 'assintomaticoTeste'},
-        { value: 3, label: 'Não tenho doença, mas quero visitar meus pais, posso fazer o teste?', trigger: 'visitaPaisTeste'},
+        { value: 1, label: 'When should I perform the test if I have symptoms?', trigger: 'testeComSintomas'},
+        { value: 2, label: "I'm asymptomatic, should I take the test?", trigger: 'assintomaticoTeste'},
+        { value: 3, label: "I don't have symptoms, but I want to visit my parents;  can I get tested?"", trigger: 'visitaPaisTeste'},
       ],
     },
     {
       id: 'testeComSintomas',
       component: (
-        <div className="Div">Caso você esteja com sintomas gripais deve realizar o teste. O teste é mais preciso  a partir do segundo ao quinto dia de sintomas.</div>
+        <div className="Div">
+          If you have flu-like symptoms you should get the test. The test is more accurate between the second and fifth day of symptoms.
+        </div>
       ),
       trigger: 'ajudaTestes',
     },
     {
       id: 'assintomaticoTeste',
       component: (
-        <div className="Div">Se você é contactante de um caso positivo, você pode realizar o teste de RT-PCR de secreção nasal e orofaringe para diagnóstico. Alguns casos de infecção cursam sem sintomas ou com sintomas mínimos. Recomenda-se então a realização do teste a partir do quinto dia de contato.</div>
+        <div className="Div">
+          If you are in contact with a positive case, you can perform the RT-PCR test for diagnosis. Some cases of infection run without symptoms or with minimal symptoms. It is then recommended to perform the test after the fifth day of contact.
+        </div>
       ),
       trigger: 'ajudaTestes',
     },
     {
       id: 'visitaPaisTeste',
       component: (
-        <div className="Div">Se você está assintomático, nem teve contato com alguém positivo, o teste pode trazer resultados falsos. Em uma pessoa assintomática, o resultado de RT-PCR pode ser falso-negativo em 100 a 60% das vezes em um paciente infectado. Assim, muito cuidado ao interpretar este resultado, nessa situação.</div>
+        <div className="Div">
+          If you are asymptomatic, or have had contact with someone who is positive, the test may give false results. In an asymptomatic - but infected - person, the result of RT-PCR can be a false negative 60% of the time. So, be very careful when interpreting this result, in this situation.
+        </div>
       ),
       trigger: 'ajudaTestes',
     },
     {
       id: 'tempoDeIsolamento',
-      message: 'Selecione o que você deseja saber sobre o tempo de isolamento.',
+      message: 'Select what you want to know about the isolation time.',
       trigger: 'menuTempoDeIsolamento',
     },
     {
       id: 'menuTempoDeIsolamento',
       options: [
-        { value: 1, label: 'Fui positivo para COVID-19, quanto tempo devo ficar isolado?', trigger: 'tempoParaPositivado'},
-        { value: 2, label: 'Meu teste deu negativo, posso sair do isolamento?', trigger: 'sairDoIsolamentoPosNegativo'},
-        { value: 3, label: 'Tive o diagnóstico de COVID-19 devo testar novamente para sair do isolamento?', trigger: 'testeAntesDeSairDoIsolamento'},
-        { value: 4, label: 'Posso ter uma segunda infecção pelo SARS-COV-2?', trigger: 'segundaInfeccao'},
+        { value: 1, label: 'I was positive for COVID-19, how long should I be isolated?', trigger: 'tempoParaPositivado'},
+        { value: 2, label: 'My test was negative, can I get out of isolation?', trigger: 'sairDoIsolamentoPosNegativo'},
+        { value: 3, label: 'I have been diagnosed with  COVID-19;  should I test again to get out of isolation?', trigger: 'testeAntesDeSairDoIsolamento'},
+        { value: 4, label: 'Can I have a second SARS-COV-2 infection?', trigger: 'segundaInfeccao'},
       ],
     },
     {
       id: 'tempoParaPositivado',
       component: (
-        <div className="Div">A transmissão do vírus se correlaciona com a replicação viral nas vias aéreas superiores. Assim a transmissão pode ocorrer principalmente de dois dias antes da apresentação dos sintomas, até 10 dias do início destes. Estudos não demonstraram vírus viáveis após o nono dia de infecção. Portanto o tempo de isolamento de um paciente é de dez dias após o início dos sintomas.</div>
+        <div className="Div">
+          The transmission of the virus correlates with viral replication in the upper airways. Thus, transmission can occur mainly from two days before the presentation of symptoms, up to 10 days from the onset of symptoms. Studies have not demonstrated viable viruses after the ninth day of infection. Therefore, a patient's isolation time is ten days after the onset of symptoms.
+        </div>
       ),
       trigger: 'ajudaTempoDeIsolamento',
     },
     {
       id: 'sairDoIsolamentoPosNegativo',
       component: (
-        <div className="Div">Caso você tenha suspeita de COVID-19 e seu teste deu negativo. Devemos analisar qual teste foi realizado e em que momento foi realizado. Se você fez um teste de RT-PCR na vigência dos sintomas, entre o segundo e o quinto dia e este foi negativo, provavelmente seus sintomas não são devidos a COVID-19, mas talvez outro vírus.  Caso você tenha feito teste de antígeno ou sorologia e este foi negativo, ele deve ser confirmado com um RT-PCR.</div>
+        <div className="Div">
+          If you suspect COVID-19 and your test is negative, we must analyze which test was performed and when it was performed. If you had a RT-PCR test during the second and fifth days of showing symptoms and it was negative, your symptoms are probably not due to COVID-19, but perhaps another virus. If you have had an antigen or serology test and it was negative, it must be confirmed with an RT-PCR.
+        </div>
       ),
       trigger: 'ajudaTempoDeIsolamento',
     },
     {
       id: 'testeAntesDeSairDoIsolamento',
       component: (
-        <div className="Div">Não recomenda-se a testagem do paciente como critério para sair do isolamento. Muitos pacientes permanecem com detecção de RNA viral nas vias aéreas superiores por semanas ou meses.  Estudos não demonstraram vírus viáveis após o nono dia de infecção.</div>
+        <div className="Div">
+          Patient testing is not recommended as a criterion for leaving isolation. Many patients remain with detection of viral RNA in the upper airways for weeks or months. Studies have not demonstrated viable viruses after the ninth day of infection.
+        </div>
       ),
       trigger: 'ajudaTempoDeIsolamento',
     },
     {
       id: 'segundaInfeccao',
       component: (
-        <div className="Div">É possível um indivíduo ser reinfectado. De acordo com dados atuais da literatura, a maioria das pessoas que tiveram infecção pelo SARS-CoV-2 ficaram imunes por um período de três, até quatro meses. Indivíduos com um segundo teste de RT-PCR positivo em um intervalo igual ou superior a 90 dias entre os episódios, são suspeitos de reinfecção.</div>
+        <div className="Div">
+          It is possible for an individual to be reinfected. According to current data, most people who have had SARS-CoV-2 infection are  immune for a period of three to four months. Individuals who test  positive with a second  RT-PCR test 90 days after the first infection are suspected to be reinfected.
+        </div>
       ),
       trigger: 'ajudaTempoDeIsolamento',
     },
     {
       id: 'viagens',
-      message: 'Selecione o que você deseja saber sobre viagens durante a pandemia.',
+      message: 'Select what you want to know about travel during the pandemic.',
       trigger: 'menuViagens',
     },
     {
       id: 'menuViagens',
       options: [
-        { value: 1, label: 'Posso viajar durante a pandemia?', trigger: 'podeViajar'},
-        { value: 2, label: 'Vou viajar, quais cuidados devo ter?', trigger: 'cuidadosViagem'},
+        { value: 1, label: 'Can I travel during the pandemic?', trigger: 'podeViajar'},
+        { value: 2, label: "I'm going to travel, what precautions should I take?", trigger: 'cuidadosViagem'},
       ],
     },
     {
       id: 'podeViajar',
       component: (
-        <div className="Div">Sim, embora não seja recomendado viajar durante a pandemia, a não ser que sejam situações necessárias. Com relação às viagens aéreas, deve-se seguir orientações básicas de precaução como manter um distanciamento mínimo de 1,5 m no embarque e desembarque, utilizar máscara de tecido ou cirúrgica durante toda a viagem, cobrindo adequadamente a boca e o nariz, evitar a circulação dentro da aeronave, higienizar as mãos sempre que possível.</div>
+        <div className="Div">
+          Yes, although traveling during a pandemic is not recommended, unless necessary. With regard to air travel, basic precautionary guidelines should be followed, such as keeping a minimum distance of 1.5 m when boarding and disembarking, using a fabric or surgical mask which adequately covers the mouth and nose during the entire trip, avoiding moving inside the aircraft, and washing your hands  whenever possible.
+        </div>
       ),
       trigger: 'ajudaViagens',
     },
     {
       id: 'cuidadosViagem',
       component: (
-        <div className="Div">Se teve contato com alguém suspeito ou confirmado, adie a viagem até ter passado seu período de quarentena. Não viaje se você teve um teste positivo para a COVID-19 nos últimos 10 dias,  mesmo que seja assintomático. Avalie a situação da pandemia no seu destino. Evite viajar se o sistema de saúde estiver lotado. Utilize máscara em todos os locais e leve máscaras extras. Evite aglomerações. Mantenha o distanciamento. Higienize as mãos frequentemente.</div>
+        <div className="Div">
+          If you have had contact with a suspected or confirmed person, postpone the trip until your quarantine period has passed. Do not travel if you have tested positive for COVID-19 in the last 10 days, even if you are asymptomatic. Assess the pandemic situation at your destination. Avoid traveling if the healthcare system is full at your destination. Wear a mask everywhere, and bring extra masks. Avoid crowds. Maintain social distance. Wash hands frequently.
+        </div>
       ),
       trigger: 'ajudaViagens',
     },
     {
       id: 'geralCovid19',
       options: [
-        { value: 1, label: 'O que são as novas variantes/mutações do SARS-CoV-2?', trigger: 'variantes'},
-        { value: 2, label: 'Qual a distância de uma pessoa para estar protegido?', trigger: 'distanciamento'},
-        { value: 3, label: 'Quero saber notícias sobre a COVID-19', trigger: 'noticias'},
+        { value: 1, label: 'What are the new variants/mutations of SARS-CoV-2?', trigger: 'variantes'},
+        { value: 2, label: 'What is social distancing, and how far do I need to be from another person to be protected?', trigger: 'distanciamento'},
+        { value: 3, label: 'I want to know news about COVID-19', trigger: 'noticias'},
       ],
     },
     {
       id: 'variantes',
       component: (
-        <div className="Div">Os vírus mudam constantemente através de mutações e novas variantes são esperadas ao longo do tempo. Até o momento, três novas variantes do SARS-CoV-2 são conhecidas: B.1.1.7 identificada no Reino Unido; B.1.352 identifica na África do Sul; e P.1 identificada no Brasil. Estas variantes parecem disseminar mais fácil e rapidamente de pessoa para pessoa. Entretanto, outras questões como a possibilidade de causar doença moderada ou severa ou mudar a efetividade das vacinas ainda estão sendo estudadas.</div>
+        <div className="Div">
+          Viruses constantly change through mutations and new variants are expected over time. To date, three new variants of SARS-CoV-2 are known: B.1.1.7 identified in the United Kingdom; B.1.352 identified in South Africa; and P.1 identified in Brazil. These variants seem to spread more easily and more quickly from person to person. Other issues such as the possibility of causing moderate or severe reactions,  or their impact on changing the effectiveness of vaccines are still being studied.
+        </div>
       ),
       trigger: 'ajudaGeral',
     },
     {
       id: 'distanciamento',
       component: (
-        <div className="Div">A recomendação é que a distância segura seja de 6 pés, ou seja, 1,88 metros.  Apesar disso, há evidências de que partículas menores do vírus podem viajar por distâncias maiores (5 metros), a depender da força que são emitidas (tosse, gritos), do ambiente (ambientes fechados ou não) e de correntes de ar que possam impulsionar as partículas mais leves.</div>
+        <div className="Div">
+          Social distancing means keeping a safe space between yourself and other people who are not from your household.The recommendation is that the safe distance is 6 feet, which is, 1.88 meters. Despite this, there is evidence that smaller particles of the virus can travel for greater distances (5 meters), depending on the force that is emitted (coughing, screaming), the environment (closed or not) and air circulation that can propel the lighter particles.
+        </div>
       ),
       trigger: 'ajudaGeral',
     },
     {
       id: 'noticias',
       component: (
-        <div className="Div">Notícias sobre a COVID-19 podem ser encontradas no nosso site, basta clicar <a href="https://www.portalqualis.com.br/covid-19/" className="DivLink">aqui</a> para acessar.</div>
+        <div className="Div">
+          News about COVID-19 can be found on our website, just click <a href="https://www.portalqualis.com.br/covid-19/" className="DivLink">here</a> to access.
+        </div>
       ),
       trigger: 'ajudaGeral',
     },
     {
       id: 'qualis',
-      message: 'Legal! O que você quer saber sobre a Qualis?',
+      message: 'Cool! What do you want to know about Qualis?',
       trigger: 'menuQualis',
     },
     {
       id: 'menuQualis',
       options: [
-        { value: 1, label: 'Como entro em contato?', trigger: 'contato'},
-        { value: 2, label: 'Quais são os serviços oferecidos?', trigger: 'servicos'},
-        { value: 3, label: 'Quais são os produtos desenvolvidos?', trigger: 'produtos'},
-        { value: 4, label: 'Quero saber outras informações', trigger: 'outrasInformacoes'},
+        { value: 1, label: 'How do I get in touch?', trigger: 'contato'},
+        { value: 2, label: 'What services are offered?', trigger: 'servicos'},
+        { value: 3, label: 'What products are developed?', trigger: 'produtos'},
+        { value: 4, label: 'I want to know more information', trigger: 'outrasInformacoes'},
       ],
     },
     {
       id: 'contato',
       component: (
-        <div className="Div">Você pode entrar em contato conosco pelo número (51) 3028-4992, pelo <a href="https://api.whatsapp.com/send/?phone=+555197748691&text&app_absent=0" className="DivLink">WhatsApp</a> ou pelo nosso <a href="https://www.portalqualis.com.br/contato/" className="DivLink">site</a>.</div>
+        <div className="Div">
+          You can contact us at +55 51 3028-4992, by <a href="https://api.whatsapp.com/send/?phone=+555197748691&text&app_absent=0" className="DivLink">WhatsApp</a> or by our <a href="https://www.portalqualis.com.br/contato/" className="DivLink">website</a>.
+        </div>
       ),
       trigger: 'ajudaQualis',
     },
     {
       id: 'servicos',
       component: (
-        <div className="Div">Os serviços ofertados pela Qualis são os seguintes: consultoria para ambientes seguros, teleinfectologia e televigilância das infecções hospitalares. Para saber mais sobre esses serviços, clique <a href="https://www.portalqualis.com.br/servicos/" className="DivLink">aqui</a>.</div>
+        <div className="Div">
+          The services offered by Qualis are the following: consulting for safe environments, teleinfectology and telesurveillance of hospital illnesses. To learn more about these services, click  <a href="https://www.portalqualis.com.br/servicos/" className="DivLink">here</a>.
+        </div>
       ),
       trigger: 'ajudaQualis',
     },
     {
       id: 'produtos',
       component: (
-        <div className="Div">Os produtos da Qualis são os seguintes: Vigilância Móvel (Mobilidade nos Pacotes de Prevenção de Infecção Hospitalar) e Robô ISA (Robô de Busca Ativa de Infecções Hospitalares). Para saber mais sobre esses produtos, clique <a href="https://www.portalqualis.com.br/produtos/" className="DivLink">aqui</a>.</div>
+        <div className="Div">
+          Qualis' products are as follows: Mobile Surveillance (Mobility in Hospital Infection Prevention Packages) and ISA Robot (Robot for Active Search for Hospital Infections). To learn more about these products, click <a href="https://www.portalqualis.com.br/produtos/" className="DivLink">here</a>.
+        </div>
       ),
       trigger: 'ajudaQualis',
     },
     {
       id: 'outrasInformacoes',
       component: (
-        <div className="Div">Você pode consultar outras informações diretamente no nosso site, basta clicar <a href="https://www.portalqualis.com.br/" className="DivLink">aqui</a>!</div>
+        <div className="Div">
+          You can consult other information directly on our website, just click <a href="https://www.portalqualis.com.br/" className="DivLink"> here </a>!
+        </div>
       ),
       trigger: 'ajudaQualis',
     },
     {
       id: 'especialista',
-      message: 'Por favor, digite o código de acesso.',
+      message: 'Please enter the access code.',
       trigger: 'codigo',
     },
     {
@@ -699,7 +827,7 @@ const EnglishSteps = [
           return true;
         }
         else{
-          return 'Código inválido';
+          return 'Invalid code';
         }
       },
       trigger: 'contatoEspecialista',
@@ -707,200 +835,204 @@ const EnglishSteps = [
     {
       id: 'contatoEspecialista',
       component: (
-        <div className="Div">Se não consegui responder sua dúvida, você pode conversar com um de nossos especialistas clicando <a href="https://api.whatsapp.com/send/?phone=%2B555199420722&text&app_absent=0" className="DivLink">aqui</a>.</div>
+        <div className="Div">
+          If I couldn't answer your question, you can chat with one of our experts by clicking <a href="https://api.whatsapp.com/send/?phone=%2B555199420722&text&app_absent=0" className="DivLink">here</ a>.
+        </div>
       ),
       trigger: 'ajuda',
     },
     {
       id: 'ajuda',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjuda',
     },
     {
       id: 'verificaAjuda',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
       ],
     },
     {
       id: 'ajudaVacina',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaVacina',
     },
     {
       id: 'verificaAjudaVacina',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'vacina'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'vacina'},
       ],
     },
     {
       id: 'ajudaMedidasPreventivas',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaMedidasPreventivas',
     },
     {
       id: 'verificaAjudaMedidasPreventivas',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'medidasPreventivas'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'medidasPreventivas'},
       ],
     },
     {
       id: 'ajudaHigieneDasMaos',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaHigieneDasMaos',
     },
     {
       id: 'verificaAjudaHigieneDasMaos',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'higieneDasMaos'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'higieneDasMaos'},
       ],
     },
     {
       id: 'ajudaLimpezaDoAmbiente',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaLimpezaDoAmbiente',
     },
     {
       id: 'verificaAjudaLimpezaDoAmbiente',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'limpezaDoAmbiente'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'limpezaDoAmbiente'},
       ],
     },
     {
       id: 'ajudaSintomas',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaSintomas',
     },
     {
       id: 'verificaAjudaSintomas',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'sintomas'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'sintomas'},
       ],
     },
     {
       id: 'ajudaContato',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaContato',
     },
     {
       id: 'verificaAjudaContato',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'contato'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'contato'},
       ],
     },
     {
       id: 'ajudaTeste',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaTeste',
     },
     {
       id: 'verificaAjudaTeste',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'teste'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'teste'},
       ],
     },
     {
       id: 'ajudaTestes',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaTestes',
     },
     {
       id: 'verificaAjudaTestes',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'teste'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'teste'},
       ],
     },
     {
       id: 'ajudaTempoDeIsolamento',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaTempoDeIsolamento',
     },
     {
       id: 'verificaAjudaTempoDeIsolamento',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'tempoDeIsolamento'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'tempoDeIsolamento'},
       ],
     },
     {
       id: 'ajudaViagens',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaViagens',
     },
     {
       id: 'verificaAjudaViagens',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'viagens'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'viagens'},
       ],
     },
     {
       id: 'ajudaGeral',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaGeral',
     },
     {
       id: 'verificaAjudaGeral',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'geralCovid19'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'geralCovid19'},
       ],
     },
     {
       id: 'ajudaGeral',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaGeral',
     },
     {
       id: 'verificaAjudaGeral',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'geralCovid19'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'geralCovid19'},
       ],
     },
     {
       id: 'ajudaQualis',
-      message: 'Posso lhe ajudar em mais alguma coisa?',
+      message: 'Can I help you with anything else?',
       trigger: 'verificaAjudaQualis',
     },
     {
       id: 'verificaAjudaQualis',
       options: [
-        { value: 1, label: 'Sim', trigger: 'retornaMenu'},
-        { value: 2, label: 'Não', trigger: 'finaliza'},
-        { value: 3, label: 'Voltar', trigger: 'qualis'},
+        { value: 1, label: 'Yes', trigger: 'retornaMenu'},
+        { value: 2, label: 'No', trigger: 'finaliza'},
+        { value: 3, label: 'Return', trigger: 'qualis'},
       ],
     },
     {
       id: 'retornaMenu',
-      message: 'Por favor, selecione a opção que representa no que posso lhe ajudar!',
+      message: 'Please select the option that represents what I can help you with!',
       trigger: 'menuPrincipal',
     },
     {
       id: 'finaliza',
       component: (
-        <div className="Div">Conversa finalizada.</div>
+        <div className="Div">
+          Conversation ended.
+        </div>
       ),
       end: true,
     },
