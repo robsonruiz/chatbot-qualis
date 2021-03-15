@@ -1,4 +1,4 @@
-let trigger = "#chat#bot@qualis2021";
+let trigger = "infectoqualis";
 
 const EnglishSteps = [
     {
@@ -37,6 +37,7 @@ const EnglishSteps = [
         { value: 8, label: 'Insulation time', trigger: 'tempoDeIsolamento'},
         { value: 9, label: 'Travels during the pandemic', trigger: 'viagens'},
         { value: 10, label: 'General information', trigger: 'geralCovid19'},
+        { value: 11, label: 'Return', trigger: 'menuPrincipal'},
       ],
     },
     {
@@ -51,6 +52,7 @@ const EnglishSteps = [
         { value: 2, label: 'Who can get the vaccine?', trigger: 'menuQuemPodeTomarAVacina'},
         { value: 3, label: 'Vaccine doses', trigger: 'menuDosesDaVacina'},
         { value: 4, label: 'General questions', trigger: 'menuDuvidasGeraisVacina'},
+        { value: 5, label: 'Return', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -63,6 +65,7 @@ const EnglishSteps = [
         { value: 5, label: 'Can the vaccine make me get sick with the COVID-19?', trigger: 'infeccaoPelaVacina'},
         { value: 6, label: 'What reactions can I have with the vaccine?', trigger: 'reacoes'},
         { value: 7, label: 'Do I need to have any test done to prove that the vaccine has reached its effectiveness?', trigger: 'comprovaEficiencia'},
+        { value: 8, label: 'Return', trigger: 'menuVacinas'},
       ],
     },
     {
@@ -73,6 +76,7 @@ const EnglishSteps = [
         { value: 3, label: 'Can pregnant women receive the vaccine?', trigger: 'gravidas'},
         { value: 4, label: 'Is it recommended for special groups and children to get vaccinated?', trigger: 'gruposEspeciaisCriancas'},
         { value: 5, label: 'Can people who have had COVID-19 get the vaccine?', trigger: 'infectadosRecebemVacina'},
+        { value: 6, label: 'Return', trigger: 'menuVacinas'},
       ],
     },
     {
@@ -80,6 +84,7 @@ const EnglishSteps = [
       options: [
         { value: 1, label: 'How many doses of the vaccine do I need to take?', trigger: 'doses'},
         { value: 2, label: 'What is the interval between the vaccine’s doses?', trigger: 'intervaloDoses'},
+        { value: 3, label: 'Return', trigger: 'menuVacinas'},
       ],
     },
     {
@@ -89,6 +94,7 @@ const EnglishSteps = [
         { value: 2, label: 'How long does the vaccine protection last?', trigger: 'tempoProtecao'},
         { value: 3, label: 'If I get the vaccine, can I stop wearing a  mask?', trigger: 'usoDaMascaraPosVacina'},
         { value: 4, label: 'Does the vaccine change the diagnostic tests for COVID-19?', trigger: 'alteraTestes'},
+        { value: 5, label: 'Return', trigger: 'menuVacinas'},
       ],
     },
     {
@@ -267,6 +273,7 @@ const EnglishSteps = [
         { value: 4, label: 'How should I wash my mask?', trigger: 'lavarMascara'},
         { value: 5, label: 'What is the difference between the surgical mask and the N95?', trigger: 'diferencaCirurgiaN95'},
         { value: 6, label: 'Is there a difference between the filter capacity of fabric masks?', trigger: 'capacidadeFiltro'},
+        { value: 7, label: 'Return', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -336,6 +343,7 @@ const EnglishSteps = [
         { value: 3, label: 'What is the correct hand hygiene technique with alcohol gel or solution?', trigger: 'higieneAlcool'},
         { value: 4, label: 'What is the correct hand hygiene technique with soap and water?', trigger: 'higieneAguaSabonete'},
         { value: 5, label: 'When should I sanitize my hands?', trigger: 'momentosHigiene'},
+        { value: 6, label: 'Return', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -396,6 +404,7 @@ const EnglishSteps = [
         { value: 3, label: 'Should I sanitize purchases from the grocery store?', trigger: 'higienizarComprasMercado'},
         { value: 4, label: 'Are the use of sanitizing mats (for shoes) effective in containing transmission?', trigger: 'tapetesSanitizantes'},
         { value: 5, label: 'What places have a higher risk of acquiring the infection?', trigger: 'locaisMaiorRisco'},
+        { value: 6, label: 'Return', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -456,6 +465,7 @@ const EnglishSteps = [
         { value: 3, label: 'Where should I seek medical care?', trigger: 'ondeProcurarAtendimento'},
         { value: 4, label: 'I have COVID-19 symptoms, should I stay away from my normal activities?', trigger: 'afastamentoPorSintomas'},
         { value: 5, label: 'How long does it take for symptoms to develop?', trigger: 'tempoDesenvolvimentoSintomas'},
+        { value: 6, label: 'Return', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -515,6 +525,7 @@ const EnglishSteps = [
         { value: 2, label: 'What do I do if I am in contact with a positive case?', trigger: 'casoPositivo'},
         { value: 3, label: 'My child has COVID-19, can I go to work?', trigger: 'filhoComCovid'},
         { value: 4, label: 'My partner has symptoms, can I go to work?', trigger: 'companheiroComSintomas'},
+        { value: 5, label: 'Return', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -567,6 +578,7 @@ const EnglishSteps = [
         { value: 4, label: 'What is the difference between antigen and RT-PCR tests?', trigger: 'diferencaDosTestes'},
         { value: 5, label: 'Can I trust the COVID-19 test available at pharmacies?', trigger: 'confiancaTestes'},
         { value: 6, label: "I don't know if I need to take the test", trigger: 'menuQuandoTestar'},
+        { value: 7, label: 'Return', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -620,6 +632,7 @@ const EnglishSteps = [
         { value: 1, label: 'When should I perform the test if I have symptoms?', trigger: 'testeComSintomas'},
         { value: 2, label: "I'm asymptomatic, should I take the test?", trigger: 'assintomaticoTeste'},
         { value: 3, label: "I don't have symptoms, but I want to visit my parents;  can I get tested?", trigger: 'visitaPaisTeste'},
+        { value: 4, label: 'Return', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -661,6 +674,7 @@ const EnglishSteps = [
         { value: 2, label: 'My test was negative, can I get out of isolation?', trigger: 'sairDoIsolamentoPosNegativo'},
         { value: 3, label: 'I have been diagnosed with  COVID-19;  should I test again to get out of isolation?', trigger: 'testeAntesDeSairDoIsolamento'},
         { value: 4, label: 'Can I have a second SARS-COV-2 infection?', trigger: 'segundaInfeccao'},
+        { value: 5, label: 'Return', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -709,6 +723,7 @@ const EnglishSteps = [
       options: [
         { value: 1, label: 'Can I travel during the pandemic?', trigger: 'podeViajar'},
         { value: 2, label: "I'm going to travel, what precautions should I take?", trigger: 'cuidadosViagem'},
+        { value: 3, label: 'Return', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -735,6 +750,7 @@ const EnglishSteps = [
         { value: 1, label: 'What are the new variants/mutations of SARS-CoV-2?', trigger: 'variantes'},
         { value: 2, label: 'What is social distancing, and how far do I need to be from another person to be protected?', trigger: 'distanciamento'},
         { value: 3, label: 'I want to know news about COVID-19', trigger: 'noticias'},
+        { value: 4, label: 'Return', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -776,6 +792,7 @@ const EnglishSteps = [
         { value: 2, label: 'What services are offered?', trigger: 'servicos'},
         { value: 3, label: 'What products are developed?', trigger: 'produtos'},
         { value: 4, label: 'I want to know more information', trigger: 'outrasInformacoes'},
+        { value: 5, label: 'Return', trigger: 'menuPrincipal'},
       ],
     },
     {

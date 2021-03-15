@@ -1,4 +1,4 @@
-let trigger = "#chat#bot@qualis2021";
+let trigger = "infectoqualis";
 
 const PortugueseSteps = [
     {
@@ -37,6 +37,7 @@ const PortugueseSteps = [
         { value: 8, label: 'Tempo de isolamento', trigger: 'tempoDeIsolamento'},
         { value: 9, label: 'Viagens durante a pandemia', trigger: 'viagens'},
         { value: 10, label: 'Informações gerais', trigger: 'geralCovid19'},
+        { value: 11, label: 'Voltar', trigger: 'menuPrincipal'},
       ],
     },
     {
@@ -51,6 +52,7 @@ const PortugueseSteps = [
         { value: 2, label: 'Quem pode tomar a vacina?', trigger: 'menuQuemPodeTomarAVacina'},
         { value: 3, label: 'Doses da vacina', trigger: 'menuDosesDaVacina'},
         { value: 4, label: 'Dúvidas gerais', trigger: 'menuDuvidasGeraisVacina'},
+        { value: 5, label: 'Voltar', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -63,6 +65,7 @@ const PortugueseSteps = [
         { value: 5, label: 'A vacina pode me fazer ter a COVID-19?', trigger: 'infeccaoPelaVacina'},
         { value: 6, label: 'Quais reações posso ter com a vacina?', trigger: 'reacoes'},
         { value: 7, label: 'Eu preciso fazer algum teste para comprovar que a vacina atingiu a sua eficácia?', trigger: 'comprovaEficiencia'},
+        { value: 8, label: 'Voltar', trigger: 'menuVacinas'},
       ],
     },
     {
@@ -73,6 +76,7 @@ const PortugueseSteps = [
         { value: 3, label: 'Mulheres grávidas podem receber a vacina?', trigger: 'gravidas'},
         { value: 4, label: 'Grupos especiais e crianças possuem indicação de se vacinar?', trigger: 'gruposEspeciaisCriancas'},
         { value: 5, label: 'Pessoas que tiveram COVID-19 podem receber a vacina?', trigger: 'infectadosRecebemVacina'},
+        { value: 6, label: 'Voltar', trigger: 'menuVacinas'},
       ],
     },
     {
@@ -80,6 +84,7 @@ const PortugueseSteps = [
       options: [
         { value: 1, label: 'Quantas doses da vacina preciso tomar?', trigger: 'doses'},
         { value: 2, label: 'Qual o intervalo entre as doses da vacina?', trigger: 'intervaloDoses'},
+        { value: 3, label: 'Voltar', trigger: 'menuVacinas'},
       ],
     },
     {
@@ -89,6 +94,7 @@ const PortugueseSteps = [
         { value: 2, label: 'Quanto tempo dura a proteção da vacina?', trigger: 'tempoProtecao'},
         { value: 3, label: 'Se receber a vacina posso abandonar o uso de máscara?', trigger: 'usoDaMascaraPosVacina'},
         { value: 4, label: 'A vacina altera os testes diagnósticos da COVID-19?', trigger: 'alteraTestes'},
+        { value: 5, label: 'Voltar', trigger: 'menuVacinas'},
       ],
     },
     {
@@ -267,6 +273,7 @@ const PortugueseSteps = [
         { value: 4, label: 'Como devo lavar a minha máscara?', trigger: 'lavarMascara'},
         { value: 5, label: 'Qual a diferença entre a máscara cirúrgica e a N95?', trigger: 'diferencaCirurgiaN95'},
         { value: 6, label: 'Existe diferença entre a capacidade de filtro das máscaras de tecido?', trigger: 'capacidadeFiltro'},
+        { value: 7, label: 'Voltar', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -336,6 +343,7 @@ const PortugueseSteps = [
         { value: 3, label: 'Qual a técnica correta da higiene de mãos com preparações alcoólicas (gel ou solução)?', trigger: 'higieneAlcool'},
         { value: 4, label: 'Qual a técnica correta da higiene de mãos com água e sabonete?', trigger: 'higieneAguaSabonete'},
         { value: 5, label: 'Quais são os momentos que devo higienizar as mãos?', trigger: 'momentosHigiene'},
+        { value: 6, label: 'Voltar', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -396,6 +404,7 @@ const PortugueseSteps = [
         { value: 3, label: 'Devo higienizar as compras do supermercado?', trigger: 'higienizarComprasMercado'},
         { value: 4, label: 'O uso de tapetes sanitizantes são efetivos na contenção da transmissão?', trigger: 'tapetesSanitizantes'},
         { value: 5, label: 'Quais são os locais de maior risco de adquirir a infecção?', trigger: 'locaisMaiorRisco'},
+        { value: 6, label: 'Voltar', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -456,6 +465,7 @@ const PortugueseSteps = [
         { value: 3, label: 'Onde devo procurar atendimento médico?', trigger: 'ondeProcurarAtendimento'},
         { value: 4, label: 'Estou com sintomas da COVID-19, devo me afastar das minhas atividades?', trigger: 'afastamentoPorSintomas'},
         { value: 5, label: 'Quanto tempo é necessário para o desenvolvimento dos sintomas?', trigger: 'tempoDesenvolvimentoSintomas'},
+        { value: 6, label: 'Voltar', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -515,6 +525,7 @@ const PortugueseSteps = [
         { value: 2, label: 'Sou contato de um caso positivo?', trigger: 'casoPositivo'},
         { value: 3, label: 'Meu filho (a) está com COVID-19, posso ir trabalhar?', trigger: 'filhoComCovid'},
         { value: 4, label: 'Meu companheiro (a) está com sintomas, posso ir trabalhar?', trigger: 'companheiroComSintomas'},
+        { value: 5, label: 'Voltar', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -567,6 +578,7 @@ const PortugueseSteps = [
         { value: 4, label: 'Qual a diferença dos testes de antígeno e de RT-PCR?', trigger: 'diferencaDosTestes'},
         { value: 5, label: 'Posso confiar no teste de COVID-19 disponível nas farmácias?', trigger: 'confiancaTestes'},
         { value: 6, label: 'Não sei se preciso realizar o teste', trigger: 'menuQuandoTestar'},
+        { value: 7, label: 'Voltar', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -620,6 +632,7 @@ const PortugueseSteps = [
         { value: 1, label: 'Quando devo realizar o teste na presença de sintomas?', trigger: 'testeComSintomas'},
         { value: 2, label: 'Estou assintomático, devo realizar o teste?', trigger: 'assintomaticoTeste'},
         { value: 3, label: 'Não tenho doença, mas quero visitar meus pais, posso fazer o teste?', trigger: 'visitaPaisTeste'},
+        { value: 4, label: 'Voltar', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -661,6 +674,7 @@ const PortugueseSteps = [
         { value: 2, label: 'Meu teste deu negativo, posso sair do isolamento?', trigger: 'sairDoIsolamentoPosNegativo'},
         { value: 3, label: 'Tive o diagnóstico de COVID-19 devo testar novamente para sair do isolamento?', trigger: 'testeAntesDeSairDoIsolamento'},
         { value: 4, label: 'Posso ter uma segunda infecção pelo SARS-COV-2?', trigger: 'segundaInfeccao'},
+        { value: 5, label: 'Voltar', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -709,6 +723,7 @@ const PortugueseSteps = [
       options: [
         { value: 1, label: 'Posso viajar durante a pandemia?', trigger: 'podeViajar'},
         { value: 2, label: 'Vou viajar, quais cuidados devo ter?', trigger: 'cuidadosViagem'},
+        { value: 3, label: 'Voltar', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -735,6 +750,7 @@ const PortugueseSteps = [
         { value: 1, label: 'O que são as novas variantes/mutações do SARS-CoV-2?', trigger: 'variantes'},
         { value: 2, label: 'Qual a distância de uma pessoa para estar protegido?', trigger: 'distanciamento'},
         { value: 3, label: 'Quero saber notícias sobre a COVID-19', trigger: 'noticias'},
+        { value: 4, label: 'Voltar', trigger: 'menuPrincipal'},
       ],
     },
     {
@@ -776,6 +792,7 @@ const PortugueseSteps = [
         { value: 2, label: 'Quais são os serviços oferecidos?', trigger: 'servicos'},
         { value: 3, label: 'Quais são os produtos desenvolvidos?', trigger: 'produtos'},
         { value: 4, label: 'Quero saber outras informações', trigger: 'outrasInformacoes'},
+        { value: 5, label: 'Voltar', trigger: 'menuPrincipal'},
       ],
     },
     {
