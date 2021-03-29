@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 let trigger = "infectoqualis";
 
 const PortugueseSteps = [
@@ -853,7 +855,7 @@ const PortugueseSteps = [
       id: 'contatoEspecialista',
       component: (
         <div className="Div">
-          Se não consegui responder sua dúvida, você pode conversar com um de nossos especialistas clicando <a href="https://api.whatsapp.com/send/?phone=%2B555199420722&text&app_absent=0" className="DivLink">aqui</a>.
+          Se não consegui responder sua dúvida, você pode conversar com um de nossos especialistas clicando <a href="https://tawk.to/chat/6061fab4f7ce182709351588/1f1vbn5hg" className="DivLink">aqui</a>.
         </div>
       ),
       trigger: 'ajuda',
