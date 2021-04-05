@@ -51,8 +51,9 @@ const EnglishSteps = [
         { value: 1, label: 'Safety and effectiveness', trigger: 'menuSegurancaEEficacia'},
         { value: 2, label: 'Who can get the vaccine?', trigger: 'menuQuemPodeTomarAVacina'},
         { value: 3, label: 'Vaccine doses', trigger: 'menuDosesDaVacina'},
-        { value: 4, label: 'General questions', trigger: 'menuDuvidasGeraisVacina'},
-        { value: 5, label: 'Return', trigger: 'menuCovid19'},
+        { value: 4, label: 'Flu vaccine', trigger: 'menuVacinaDaGripe'},
+        { value: 5, label: 'General questions', trigger: 'menuDuvidasGeraisVacina'},
+        { value: 6, label: 'Return', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -85,6 +86,17 @@ const EnglishSteps = [
         { value: 1, label: 'How many doses of the vaccine do I need to take?', trigger: 'doses'},
         { value: 2, label: 'What is the interval between the vaccine’s doses?', trigger: 'intervaloDoses'},
         { value: 3, label: 'Return', trigger: 'menuVacinas'},
+      ],
+    },
+    {
+      id: 'menuVacinaDaGripe',
+      options: [
+        { value: 1, label: 'Why is it important to get the flu vaccine during the pandemic?', trigger: 'vacinaDaGripeNaPandemia'},
+        { value: 2, label: 'Who should get the flu vaccine?', trigger: 'quemTomaVacinaDaGripe'},
+        { value: 3, label: 'Should the flu vaccine be given to someone suspected or confirmed of COVID-19?', trigger: 'vacinaDaGripeComSuspeitaOuCasoDeCOVID'},
+        { value: 4, label: 'I am a priority group to receive the COVID-19 and flu vaccine, which one should I get first?', trigger: 'qualVacinaTomarPrimeiro'},
+        { value: 5, label: 'Can COVID-19 and flu vaccine be co-administered?', trigger: 'vacinasConcomitantes'},
+        { value: 6, label: 'Return', trigger: 'menuVacinas'},
       ],
     },
     {
@@ -210,6 +222,51 @@ const EnglishSteps = [
       component: (
         <div className="Div">
           The second dose of the vaccine must comply with the recommendation regarding time. If it is given earlier it may reduce the effectiveness of the vaccine. If the second dose is delayed, there is no loss in efficacy. It is recommended that if there is a delay the second dose should be taken as soon as possible. In addition, the dose range recommended by the manufacturer must be respected, as the time may differ depending on the laboratory.
+        </div>
+      ),
+      trigger: 'ajudaVacina',
+    },
+    {
+      id: 'vacinaDaGripeNaPandemia',
+      component: (
+        <div className="Div">
+          The flu vaccination is very important to reduce flu because it can help reduce the overall impact of respiratory illnesses on the population and thus lessen the resulting burden on the healthcare system during the COVID-19 pandemic. The flu vaccine may also provide several individual health benefits reducing the severity of your illness if you do get the flu and reducing your risk of a flu-associated hospitalization.
+        </div>
+      ),
+      trigger: 'ajudaVacina',
+    },
+    {
+      id: 'quemTomaVacinaDaGripe',
+      component: (
+        <div className="Div">
+          Anyone older than 6 months of age can have the flu vaccine (with the exception of people with some medical conditions). However, for the government's vaccination schedule, priority groups are considered: children from 6 months to under 6 years of age, pregnant women, puerperal women, indigenous peoples, health workers, people aged 60 and over, school teachers from public and private schools of basic and higher education, people with chronic noncommunicable diseases and other special clinical conditions, people with permanent disabilities, security and rescue forces, armed forces, truck drivers, urban and long-distance public passenger transport workers, port workers, prison staff, adolescents and young people from 12 to 21 years of age under socio-educational measures and a population deprived of liberty, indigenous peoples.
+        </div>
+      ),
+      trigger: 'ajudaVacina',
+    },
+    {
+      id: 'vacinaDaGripeComSuspeitaOuCasoDeCOVID',
+      component: (
+        <div className="Div">
+          No. Vaccination should be postponed for people with suspected or confirmed COVID-19, regardless of whether they have symptoms, until they have met the criteria to discontinue their isolation. Since clinical worsening can occur up to two weeks after infection, ideally vaccination should be delayed until full clinical recovery and at least four weeks after the onset of symptoms or four weeks from the first positive RT-PCR sample in asymptomatic people. While mild illness is not a contraindication to flu vaccination, vaccination visits for these people should be postponed to avoid exposing healthcare personnel and other patients to the virus that causes COVID-19. Additionally, a prior infection with suspected or confirmed COVID-19 or flu does not protect someone from future flu infections. The best way to prevent seasonal flu is to get vaccinated every year.
+        </div>
+      ),
+      trigger: 'ajudaVacina',
+    },
+    {
+      id: 'qualVacinaTomarPrimeiro',
+      component: (
+        <div className="Div">
+          It is important to prioritize the administration of the COVID-19 vaccine for people included in the priority group and who have not yet been vaccinated. The minimum interval of 14 days between vaccines for COVID-19 and influenza must be respected.
+        </div>
+      ),
+      trigger: 'ajudaVacina',
+    },
+    {
+      id: 'vacinasConcomitantes',
+      component: (
+        <div className="Div">
+          No. The COVID-19 vaccines should be administered alone, with a minimum interval of 14 days before or after administration of any other vaccines, including influenza vaccines. This is because of a lack of data on safety and effectiveness of COVID-19 vaccine administered simultaneously with other vaccines. If COVID-19 vaccine is inadvertently administered within 14 days of another vaccine, doses do not need to be repeated for either vaccine. This recommendation may be updated as more safety and efficacy data become available.
         </div>
       ),
       trigger: 'ajudaVacina',

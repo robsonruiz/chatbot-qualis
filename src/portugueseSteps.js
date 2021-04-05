@@ -53,8 +53,9 @@ const PortugueseSteps = [
         { value: 1, label: 'Segurança e eficácia', trigger: 'menuSegurancaEEficacia'},
         { value: 2, label: 'Quem pode tomar a vacina?', trigger: 'menuQuemPodeTomarAVacina'},
         { value: 3, label: 'Doses da vacina', trigger: 'menuDosesDaVacina'},
-        { value: 4, label: 'Dúvidas gerais', trigger: 'menuDuvidasGeraisVacina'},
-        { value: 5, label: 'Voltar', trigger: 'menuCovid19'},
+        { value: 4, label: 'Vacina da gripe', trigger: 'menuVacinaDaGripe'},
+        { value: 5, label: 'Dúvidas gerais', trigger: 'menuDuvidasGeraisVacina'},
+        { value: 6, label: 'Voltar', trigger: 'menuCovid19'},
       ],
     },
     {
@@ -87,6 +88,17 @@ const PortugueseSteps = [
         { value: 1, label: 'Quantas doses da vacina preciso tomar?', trigger: 'doses'},
         { value: 2, label: 'Qual o intervalo entre as doses da vacina?', trigger: 'intervaloDoses'},
         { value: 3, label: 'Voltar', trigger: 'menuVacinas'},
+      ],
+    },
+    {
+      id: 'menuVacinaDaGripe',
+      options: [
+        { value: 1, label: 'Por que é importante tomar a vacina da gripe durante a pandemia?', trigger: 'vacinaDaGripeNaPandemia'},
+        { value: 2, label: 'Quem deve receber a vacina da gripe?', trigger: 'quemTomaVacinaDaGripe'},
+        { value: 3, label: 'A vacina contra gripe deve ser administrada a alguém com suspeita ou confirmação de COVID-19?', trigger: 'vacinaDaGripeComSuspeitaOuCasoDeCOVID'},
+        { value: 4, label: 'Sou grupo prioritário para receber a vacina da COVID-19 e da gripe, qual devo tomar primeiro?', trigger: 'qualVacinaTomarPrimeiro'},
+        { value: 5, label: 'A vacina para a COVID-19 e a vacina contra gripe podem ser administradas concomitantemente?', trigger: 'vacinasConcomitantes'},
+        { value: 6, label: 'Voltar', trigger: 'menuVacinas'},
       ],
     },
     {
@@ -212,6 +224,51 @@ const PortugueseSteps = [
       component: (
         <div className="Div">
           A segunda dose da vacina deve obedecer à recomendação com relação ao tempo. Se esta é administrada mais precocemente pode reduzir a eficácia da vacina. Caso a segunda dose seja atrasada, não há perda com relação à eficácia. Recomenda-se que, se houver atraso, a segunda dose seja feita o quanto antes. Além disso, deve-se respeitar o intervalo de dose recomendado pelo fabricante, visto que o tempo pode ser diferente conforme o laboratório. 
+        </div>
+      ),
+      trigger: 'ajudaVacina',
+    },
+    {
+      id: 'vacinaDaGripeNaPandemia',
+      component: (
+        <div className="Div">
+          A vacinação contra a gripe é muito importante  porque pode ajudar a reduzir o impacto geral das doenças respiratórias na população e, assim, diminuir a carga sobre o sistema de saúde durante a pandemia de COVID-19. A vacina contra a gripe também pode fornecer vários benefícios individuais à saúde, reduzindo a gravidade da doença e o aparecimento de sintomas, além do risco de hospitalização.
+        </div>
+      ),
+      trigger: 'ajudaVacina',
+    },
+    {
+      id: 'quemTomaVacinaDaGripe',
+      component: (
+        <div className="Div">
+          Qualquer pessoa acima dos 6 meses de idade pode receber a vacina da gripe (com exceção de portadores de algumas doenças crônicas). Entretanto, para o cronograma de vacinação do governo, são considerados grupos prioritários: crianças de 6 meses a menores de 6 anos de idade, gestantes, puérperas, povos indígenas, trabalhadores da saúde, idosos com 60 anos e mais, professores das escolas públicas e privadas de ensino básico e superior, pessoas portadoras de doenças crônicas não transmissíveis e outras condições clínicas especiais, pessoas com deficiência permanente, forças de segurança e salvamento, forças armadas, caminhoneiros, trabalhadores de transporte coletivo rodoviário de passageiros urbano e de longo curso, trabalhadores portuários, funcionários do sistema prisional, adolescentes, jovens de 12 a 21 anos de idade sob medidas socioeducativas e população privada de liberdade, povos indígenas.
+        </div>
+      ),
+      trigger: 'ajudaVacina',
+    },
+    {
+      id: 'vacinaDaGripeComSuspeitaOuCasoDeCOVID',
+      component: (
+        <div className="Div">
+          Não. A vacinação deve ser adiada para pessoas com suspeita ou confirmação de COVID-19, independentemente de apresentarem sintomas, até que tenham preenchido os critérios para interromper o isolamento. Como a piora clínica pode ocorrer até duas semanas após a infecção, idealmente a vacinação deve ser adiada até a recuperação clínica total e pelo menos quatro semanas após o início dos sintomas ou quatro semanas a da primeira amostra de PCR positiva em pessoas assintomáticas. Embora a doença leve não seja uma contra-indicação para a vacinação contra a gripe, as visitas de vacinação para essas pessoas devem ser adiadas para evitar a exposição de profissionais de saúde e outros pacientes ao vírus que causa a COVID-19.
+        </div>
+      ),
+      trigger: 'ajudaVacina',
+    },
+    {
+      id: 'qualVacinaTomarPrimeiro',
+      component: (
+        <div className="Div">
+          É importante que seja priorizada a administração da vacina COVID-19, para pessoas contempladas no grupo prioritário e que ainda não foram vacinadas contra o novo coronavírus. Deve-se respeitar o intervalo mínimo de 14 dias entre as vacinas da COVID-19 e da gripe.
+        </div>
+      ),
+      trigger: 'ajudaVacina',
+    },
+    {
+      id: 'vacinasConcomitantes',
+      component: (
+        <div className="Div">
+          Não. A vacina da COVID-19 deve ser administrada isoladamente, com um intervalo mínimo de 14 dias antes ou depois da administração de qualquer outra vacina, incluindo a vacina contra a influenza. Isso ocorre devido à falta de dados sobre segurança e eficácia da vacina da COVID-19 administrada simultaneamente com outras vacinas. Se a vacina da COVID-19 for administrada inadvertidamente dentro de 14 dias de outra vacina, as doses não precisam ser repetidas para qualquer uma das vacinas. Esta recomendação pode ser atualizada à medida que mais dados de segurança e eficácia se tornem disponíveis.
         </div>
       ),
       trigger: 'ajudaVacina',
