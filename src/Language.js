@@ -7,7 +7,7 @@ import './Language.css';
 
 const Language = () => (
     <div className="Language">
-        <img src={Logo} className="LogoLanguage"/>
+        <img src={Logo} className="LogoLanguage" alt="Qualis Logo"/>
         <h3 className="TitleLanguage">Bem-vindo(a) ao Chatbot da Qualis - Tecnologia em Infectologia!</h3>
         <p className="LanguageText">Por favor, selecione sua língua de preferência.</p>
         <p className="LanguageText">Please select your language.</p>

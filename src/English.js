@@ -19,7 +19,7 @@ const theme = {
 const App = () => (
   <ThemeProvider theme={theme}>
     <div className="Chatbot">
-      <img src={Logo} className="Logo"/>
+      <img src={Logo} className="Logo" alt="Qualis Logo"/>
       <ChatBot steps={EnglishSteps}/>
     </div>
   </ThemeProvider>
