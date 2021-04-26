@@ -910,7 +910,7 @@ const EnglishSteps = [
       id: 'contatoEspecialista',
       component: (
         <div className="Div">
-          If I couldn't answer your question, you can chat with one of our experts by clicking <a href="https://tawk.to/chat/6061fab4f7ce182709351588/1f1vbn5hg" className="DivLink">here</ a>.
+          If I couldn't answer your question, you can chat with one of our experts by clicking <a href="https://wa.me/+555199420722" className="DivLink">here</ a>.
         </div>
       ),
       trigger: 'ajuda',
